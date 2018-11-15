@@ -73,23 +73,29 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddressForm.Designer.vb">
+      <DependentUpon>AddressForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddressForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForm.Designer.vb">
+      <DependentUpon>AdminForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeForm.Designer.vb">
+      <DependentUpon>EmployeeForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form2.designer.vb">
-      <DependentUpon>Form2.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form2.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form3.Designer.vb">
-      <DependentUpon>Form3.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form3.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -111,6 +117,54 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MyGuitarShopDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OrderItemsForm.Designer.vb">
+      <DependentUpon>OrderItemsForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="OrderItemsForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdersForm.Designer.vb">
+      <DependentUpon>OrdersForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="OrdersForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductsForm.Designer.vb">
+      <DependentUpon>ProductsForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ProductsForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RewardMembersForm.Designer.vb">
+      <DependentUpon>RewardMembersForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RewardMembersForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RewardSpecForm.Designer.vb">
+      <DependentUpon>RewardSpecForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RewardSpecForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServicesForm.Designer.vb">
+      <DependentUpon>ServicesForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ServicesForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffForm.Designer.vb">
+      <DependentUpon>StaffForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StaffForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserLogin.Designer.vb">
+      <DependentUpon>UserLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserLogin.vb">
+      <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 
-Public Class Form1
+Public Class CustomerForm
     'This opens the connection to the database. If you use it change the server name to your server name
     Dim connection As New SqlConnection("Server= JACOB; Database = MyGuitarShop; Integrated Security = true")
 
