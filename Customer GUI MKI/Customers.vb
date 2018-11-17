@@ -62,7 +62,7 @@ Public Class CustomerForm
     End Sub
 
     'GET
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles GetButton.Click
+    Private Sub GetButton_Click(sender As Object, e As EventArgs) Handles GetButton.Click
 
         connection.Open()
 
@@ -123,6 +123,10 @@ Public Class CustomerForm
 
     Private Sub AddressGuiButton_Click(sender As Object, e As EventArgs) Handles AddressGuiButton.Click
         AddressForm.Show()
+    End Sub
+
+    Private Sub CustomerForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class
 

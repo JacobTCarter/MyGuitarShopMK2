@@ -107,6 +107,12 @@
       <DependentUpon>Customers.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="EmployeeListForm.Designer.vb">
+      <DependentUpon>EmployeeListForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeListForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -127,6 +133,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MyGuitarShopDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="NewUserForm.Designer.vb">
+      <DependentUpon>NewUserForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewUserForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="OrderItemsForm.Designer.vb">
       <DependentUpon>OrderItemsForm.vb</DependentUpon>
     </Compile>
@@ -137,6 +149,12 @@
       <DependentUpon>OrdersForm.vb</DependentUpon>
     </Compile>
     <Compile Include="OrdersForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductListForm.Designer.vb">
+      <DependentUpon>ProductListForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ProductListForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ProductsForm.Designer.vb">
@@ -163,18 +181,16 @@
     <Compile Include="ServicesForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SqlDatabaseSetup.vb" />
-    <Compile Include="SqlServerUnitTest1.vb" />
     <Compile Include="StaffForm.Designer.vb">
       <DependentUpon>StaffForm.vb</DependentUpon>
     </Compile>
     <Compile Include="StaffForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserLogin.Designer.vb">
-      <DependentUpon>UserLogin.vb</DependentUpon>
+    <Compile Include="UserLoginForm.Designer.vb">
+      <DependentUpon>UserLoginForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserLogin.vb">
+    <Compile Include="UserLoginForm.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -182,14 +198,26 @@
     <EmbeddedResource Include="AddressForm.resx">
       <DependentUpon>AddressForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminForm.resx">
+      <DependentUpon>AdminForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customers.resx">
       <DependentUpon>Customers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeForm.resx">
+      <DependentUpon>EmployeeForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewUserForm.resx">
+      <DependentUpon>NewUserForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserLoginForm.resx">
+      <DependentUpon>UserLoginForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
