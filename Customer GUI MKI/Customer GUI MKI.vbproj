@@ -113,6 +113,12 @@
     <Compile Include="EmployeeListForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AddCustomerWithAddress.Designer.vb">
+      <DependentUpon>AddCustomerWithAddress.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddCustomerWithAddress.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -195,6 +201,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddCustomerWithAddress.resx">
+      <DependentUpon>AddCustomerWithAddress.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddressForm.resx">
       <DependentUpon>AddressForm.vb</DependentUpon>
     </EmbeddedResource>

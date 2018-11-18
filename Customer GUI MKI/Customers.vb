@@ -51,9 +51,14 @@ Public Class CustomerForm
 
         ''ExecuteNonQuery() executes the sql query you wrote out above
         If command.ExecuteNonQuery() = 1 Then
-
             MessageBox.Show("Customer Deleted")
-
+            CustomerID_TB.Clear()
+            Password_TB.Clear()
+            EmailAddress_TB.Clear()
+            FirstName_TB.Clear()
+            LastName_TB.Clear()
+            ShippingAddressID_TB.Clear()
+            BillingAddressID_TB.Clear()
         Else
 
             MessageBox.Show("Customer Not Deleted")
@@ -71,7 +76,7 @@ Public Class CustomerForm
         Dim adapter As New SqlDataAdapter(command)
         Dim table As New DataTable()
         adapter.Fill(table)
-
+        
         Dim rowCount As Integer = table.Columns.Count
         Console.WriteLine(rowCount.ToString)
 
@@ -102,11 +107,8 @@ Public Class CustomerForm
         command.Parameters.Add("@shipping", SqlDbType.Int).Value = ShippingAddressID_TB.Text
         command.Parameters.Add("@cid", SqlDbType.Int).Value = CustomerID_TB.Text
 
-
-        'This line is used to actually open the connection to the database 
         connection.Open()
 
-        ''ExecuteNonQuery() executes the sql query you wrote out above
         If command.ExecuteNonQuery() = 1 Then
 
             MessageBox.Show("Customer Updated")
@@ -117,16 +119,13 @@ Public Class CustomerForm
 
         End If
 
-        'Closes the database connection
         connection.Close()
     End Sub
 
+    'ADDRESS BUTTON
     Private Sub AddressGuiButton_Click(sender As Object, e As EventArgs) Handles AddressGuiButton.Click
-        AddressForm.Show()
-    End Sub
-
-    Private Sub CustomerForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        AddCustomerWithAddress.Show()
+        'AddressForm.Show()
+        Me.Close()
     End Sub
 End Class
-

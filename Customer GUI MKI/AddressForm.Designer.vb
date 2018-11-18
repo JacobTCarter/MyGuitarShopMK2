@@ -110,6 +110,7 @@ Partial Class AddressForm
         Me.AddressID.Size = New System.Drawing.Size(73, 17)
         Me.AddressID.TabIndex = 8
         Me.AddressID.Text = "AddressID"
+        Me.AddressID.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'CustomerID
         '
@@ -119,6 +120,7 @@ Partial Class AddressForm
         Me.CustomerID.Size = New System.Drawing.Size(81, 17)
         Me.CustomerID.TabIndex = 9
         Me.CustomerID.Text = "CustomerID"
+        Me.CustomerID.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'AddressOne
         '
@@ -128,6 +130,7 @@ Partial Class AddressForm
         Me.AddressOne.Size = New System.Drawing.Size(91, 17)
         Me.AddressOne.TabIndex = 10
         Me.AddressOne.Text = "Address One"
+        Me.AddressOne.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'AddressTwo
         '
@@ -137,6 +140,7 @@ Partial Class AddressForm
         Me.AddressTwo.Size = New System.Drawing.Size(90, 17)
         Me.AddressTwo.TabIndex = 11
         Me.AddressTwo.Text = "Address Two"
+        Me.AddressTwo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'City
         '
@@ -146,6 +150,7 @@ Partial Class AddressForm
         Me.City.Size = New System.Drawing.Size(31, 17)
         Me.City.TabIndex = 12
         Me.City.Text = "City"
+        Me.City.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'State
         '
@@ -155,6 +160,7 @@ Partial Class AddressForm
         Me.State.Size = New System.Drawing.Size(41, 17)
         Me.State.TabIndex = 13
         Me.State.Text = "State"
+        Me.State.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'ZipCode
         '
@@ -164,6 +170,7 @@ Partial Class AddressForm
         Me.ZipCode.Size = New System.Drawing.Size(65, 17)
         Me.ZipCode.TabIndex = 14
         Me.ZipCode.Text = "Zip Code"
+        Me.ZipCode.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'PhoneNumber
         '
@@ -173,6 +180,7 @@ Partial Class AddressForm
         Me.PhoneNumber.Size = New System.Drawing.Size(103, 17)
         Me.PhoneNumber.TabIndex = 15
         Me.PhoneNumber.Text = "Phone Number"
+        Me.PhoneNumber.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'SubmitButton
         '

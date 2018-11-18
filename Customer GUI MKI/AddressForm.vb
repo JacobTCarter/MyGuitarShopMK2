@@ -14,7 +14,7 @@ Public Class AddressForm
         command.Parameters.Add("@Line1", SqlDbType.VarChar).Value = AddressOne_TB.Text
         command.Parameters.Add("@Line2", SqlDbType.VarChar).Value = AddressTwo_TB.Text
         command.Parameters.Add("@City", SqlDbType.VarChar).Value = City_TB.Text
-        command.Parameters.Add("@State", SqlDbType.VarChar).Value = State_TB.Text
+        command.Parameters.Add("@State", SqlDbType.VarChar).Value = State_TB.Text.ToUpper
         command.Parameters.Add("@ZipCode", SqlDbType.Int).Value = ZipCode_TB.Text
         command.Parameters.Add("@PhoneNumber", SqlDbType.VarChar).Value = PhoneNumber_TB.Text
 
@@ -42,28 +42,30 @@ Public Class AddressForm
     'DELETE
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles DeleteButton.Click
 
-        Dim command As New SqlCommand("DELETE from Customers where AddressID = @AddressID", connection)
-
-        command.Parameters.Add(New SqlParameter("@cid", SqlDbType.Int)).Value = CustomerID_TB.Text
+        Dim command As New SqlCommand("DELETE from ADDRESSES where AddressID = @AddressID", connection)
+        command.Parameters.Add(New SqlParameter("@AddressID", SqlDbType.Int)).Value = AddressID_TB.Text
 
         connection.Open()
 
         If command.ExecuteNonQuery() = 1 Then
-
-            MessageBox.Show("Customer Deleted")
-
+            MessageBox.Show("Address Deleted")
+            AddressID_TB.Clear()
+            CustomerID_TB.Clear()
+            AddressOne_TB.Clear()
+            AddressTwo_TB.Clear()
+            City_TB.Clear()
+            State_TB.Clear()
+            ZipCode_TB.Clear()
+            PhoneNumber_TB.Clear()
         Else
-
-            MessageBox.Show("Customer Not Deleted")
-
-            connection.Close()
-
+            MessageBox.Show("Address Not Deleted")
         End If
+
+        connection.Close()
     End Sub
 
     'GET W/ ADDRESS ID
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles GetAddressIDButton.Click
-        connection.Open()
 
         Dim command As New SqlCommand("SELECT * FROM ADDRESSES WHERE AddressID = @AddressID", connection)
         command.Parameters.Add(New SqlParameter("@AddressID", SqlDbType.Int)).Value = AddressID_TB.Text
@@ -71,8 +73,7 @@ Public Class AddressForm
         Dim table As New DataTable()
         adapter.Fill(table)
 
-        'Dim rowCount As Integer = table.Rows.Count
-        'Console.WriteLine(rowCount.ToString)
+        connection.Open()
 
         CustomerID_TB.Text = table.Rows(0)(1).ToString()
         AddressOne_TB.Text = table.Rows(0)(2).ToString()

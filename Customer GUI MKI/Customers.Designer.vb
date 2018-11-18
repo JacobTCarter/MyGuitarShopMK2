@@ -196,7 +196,7 @@ Partial Class CustomerForm
         '
         Me.GetButton.Location = New System.Drawing.Point(317, 49)
         Me.GetButton.Name = "GetButton"
-        Me.GetButton.Size = New System.Drawing.Size(103, 23)
+        Me.GetButton.Size = New System.Drawing.Size(114, 23)
         Me.GetButton.TabIndex = 22
         Me.GetButton.Text = "Get Customer"
         Me.GetButton.UseVisualStyleBackColor = True
