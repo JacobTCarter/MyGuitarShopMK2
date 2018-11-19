@@ -7,6 +7,7 @@ Public Class AddressForm
     'SELECT
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles SubmitButton.Click
 
+
         Dim command As New SqlCommand("SET IDENTITY_INSERT Addresses on;insert into Addresses(AddressID, CustomerID, Line1, Line2, City, State, ZipCode, PhoneNumber) values(@AddressID,@CustomerID,@Line1,@Line2,@City,@State,@ZipCode,@PhoneNumber)", connection)
 
         command.Parameters.Add("@AddressID", SqlDbType.Int).Value = AddressID_TB.Text
