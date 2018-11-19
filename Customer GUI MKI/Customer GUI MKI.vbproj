@@ -100,12 +100,6 @@
     <Compile Include="CustomerListForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmployeeForm.Designer.vb">
-      <DependentUpon>EmployeeForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="EmployeeForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Customers.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +132,24 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MyGuitarShopDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NewAdminForm.Designer.vb">
+      <DependentUpon>NewAdminForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewAdminForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewEmployeeForm.Designer.vb">
+      <DependentUpon>NewEmployeeForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewEmployeeForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewStaffForm.Designer.vb">
+      <DependentUpon>NewStaffForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewStaffForm.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="NewUserForm.Designer.vb">
       <DependentUpon>NewUserForm.vb</DependentUpon>
@@ -207,11 +219,11 @@
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomerListForm.resx">
+      <DependentUpon>CustomerListForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customers.resx">
       <DependentUpon>Customers.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EmployeeForm.resx">
-      <DependentUpon>EmployeeForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeListForm.resx">
       <DependentUpon>EmployeeListForm.vb</DependentUpon>
@@ -221,6 +233,15 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAdminForm.resx">
+      <DependentUpon>NewAdminForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEmployeeForm.resx">
+      <DependentUpon>NewEmployeeForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewStaffForm.resx">
+      <DependentUpon>NewStaffForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewUserForm.resx">
       <DependentUpon>NewUserForm.vb</DependentUpon>

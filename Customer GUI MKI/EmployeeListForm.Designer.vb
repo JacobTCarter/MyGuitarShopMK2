@@ -22,16 +22,53 @@ Partial Class EmployeeListForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.logOut = New System.Windows.Forms.Button()
+        Me.back = New System.Windows.Forms.Button()
+        Me.newEmployeeButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
+        '
+        'logOut
+        '
+        Me.logOut.Location = New System.Drawing.Point(713, 12)
+        Me.logOut.Name = "logOut"
+        Me.logOut.Size = New System.Drawing.Size(75, 23)
+        Me.logOut.TabIndex = 0
+        Me.logOut.Text = "Log Out"
+        Me.logOut.UseVisualStyleBackColor = True
+        '
+        'back
+        '
+        Me.back.Location = New System.Drawing.Point(713, 415)
+        Me.back.Name = "back"
+        Me.back.Size = New System.Drawing.Size(75, 23)
+        Me.back.TabIndex = 1
+        Me.back.Text = "Back"
+        Me.back.UseVisualStyleBackColor = True
+        '
+        'newEmployeeButton
+        '
+        Me.newEmployeeButton.Location = New System.Drawing.Point(13, 414)
+        Me.newEmployeeButton.Name = "newEmployeeButton"
+        Me.newEmployeeButton.Size = New System.Drawing.Size(115, 23)
+        Me.newEmployeeButton.TabIndex = 2
+        Me.newEmployeeButton.Text = "New Employee"
+        Me.newEmployeeButton.UseVisualStyleBackColor = True
         '
         'EmployeeListForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(808, 450)
+        Me.Controls.Add(Me.newEmployeeButton)
+        Me.Controls.Add(Me.back)
+        Me.Controls.Add(Me.logOut)
         Me.Name = "EmployeeListForm"
         Me.Text = "EmployeeListForm"
         Me.ResumeLayout(False)
 
     End Sub
+
+    Friend WithEvents logOut As Button
+    Friend WithEvents back As Button
+    Friend WithEvents newEmployeeButton As Button
 End Class
