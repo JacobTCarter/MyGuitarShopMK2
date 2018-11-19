@@ -22,6 +22,7 @@ Partial Class AddressForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.AddressID_TB = New System.Windows.Forms.TextBox()
         Me.CustomerID_TB = New System.Windows.Forms.TextBox()
         Me.AddressOne_TB = New System.Windows.Forms.TextBox()
@@ -44,6 +45,7 @@ Partial Class AddressForm
         Me.ExitButton = New System.Windows.Forms.Button()
         Me.GetAddressIDButton = New System.Windows.Forms.Button()
         Me.GetCustomerIDButton = New System.Windows.Forms.Button()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SuspendLayout()
         '
         'AddressID_TB
@@ -236,6 +238,12 @@ Partial Class AddressForm
         Me.GetCustomerIDButton.Text = "Get Using CustomerID"
         Me.GetCustomerIDButton.UseVisualStyleBackColor = True
         '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
+        '
         'AddressForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -292,4 +300,5 @@ Partial Class AddressForm
     Friend WithEvents ExitButton As Button
     Friend WithEvents GetAddressIDButton As Button
     Friend WithEvents GetCustomerIDButton As Button
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
 End Class

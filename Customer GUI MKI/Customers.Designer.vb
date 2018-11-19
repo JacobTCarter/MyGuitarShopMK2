@@ -47,111 +47,125 @@ Partial Class CustomerForm
         'Password
         '
         Me.Password.AutoSize = True
-        Me.Password.Location = New System.Drawing.Point(38, 79)
+        Me.Password.Location = New System.Drawing.Point(38, 82)
+        Me.Password.MinimumSize = New System.Drawing.Size(135, 0)
         Me.Password.Name = "Password"
-        Me.Password.Size = New System.Drawing.Size(69, 17)
+        Me.Password.Size = New System.Drawing.Size(135, 17)
         Me.Password.TabIndex = 0
         Me.Password.Text = "Password"
+        Me.Password.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'FirstName
         '
         Me.FirstName.AutoSize = True
-        Me.FirstName.Location = New System.Drawing.Point(38, 135)
+        Me.FirstName.Location = New System.Drawing.Point(38, 138)
+        Me.FirstName.MinimumSize = New System.Drawing.Size(135, 0)
         Me.FirstName.Name = "FirstName"
-        Me.FirstName.Size = New System.Drawing.Size(76, 17)
+        Me.FirstName.Size = New System.Drawing.Size(135, 17)
         Me.FirstName.TabIndex = 1
         Me.FirstName.Text = "First Name"
+        Me.FirstName.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'EmailAddress
         '
         Me.EmailAddress.AutoSize = True
-        Me.EmailAddress.Location = New System.Drawing.Point(38, 107)
+        Me.EmailAddress.Location = New System.Drawing.Point(38, 110)
+        Me.EmailAddress.MinimumSize = New System.Drawing.Size(135, 0)
         Me.EmailAddress.Name = "EmailAddress"
-        Me.EmailAddress.Size = New System.Drawing.Size(98, 17)
+        Me.EmailAddress.Size = New System.Drawing.Size(135, 17)
         Me.EmailAddress.TabIndex = 2
         Me.EmailAddress.Text = "Email Address"
+        Me.EmailAddress.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'LastName
         '
         Me.LastName.AutoSize = True
-        Me.LastName.Location = New System.Drawing.Point(38, 163)
+        Me.LastName.Location = New System.Drawing.Point(38, 166)
+        Me.LastName.MinimumSize = New System.Drawing.Size(135, 0)
         Me.LastName.Name = "LastName"
-        Me.LastName.Size = New System.Drawing.Size(76, 17)
+        Me.LastName.Size = New System.Drawing.Size(135, 17)
         Me.LastName.TabIndex = 3
         Me.LastName.Text = "Last Name"
+        Me.LastName.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'CustomerID
         '
         Me.CustomerID.AutoSize = True
-        Me.CustomerID.Location = New System.Drawing.Point(38, 54)
+        Me.CustomerID.Location = New System.Drawing.Point(38, 52)
+        Me.CustomerID.MinimumSize = New System.Drawing.Size(135, 0)
         Me.CustomerID.Name = "CustomerID"
-        Me.CustomerID.Size = New System.Drawing.Size(85, 17)
+        Me.CustomerID.Size = New System.Drawing.Size(135, 17)
         Me.CustomerID.TabIndex = 6
         Me.CustomerID.Text = "Customer ID"
+        Me.CustomerID.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'ShippingAddressID
         '
         Me.ShippingAddressID.AutoSize = True
-        Me.ShippingAddressID.Location = New System.Drawing.Point(38, 191)
+        Me.ShippingAddressID.Location = New System.Drawing.Point(38, 194)
+        Me.ShippingAddressID.MinimumSize = New System.Drawing.Size(135, 0)
         Me.ShippingAddressID.Name = "ShippingAddressID"
         Me.ShippingAddressID.Size = New System.Drawing.Size(136, 17)
         Me.ShippingAddressID.TabIndex = 7
         Me.ShippingAddressID.Text = "Shipping Address ID"
+        Me.ShippingAddressID.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'BillingAddressID
         '
         Me.BillingAddressID.AutoSize = True
-        Me.BillingAddressID.Location = New System.Drawing.Point(38, 219)
+        Me.BillingAddressID.Location = New System.Drawing.Point(38, 222)
+        Me.BillingAddressID.MinimumSize = New System.Drawing.Size(135, 0)
         Me.BillingAddressID.Name = "BillingAddressID"
-        Me.BillingAddressID.Size = New System.Drawing.Size(118, 17)
+        Me.BillingAddressID.Size = New System.Drawing.Size(135, 17)
         Me.BillingAddressID.TabIndex = 8
         Me.BillingAddressID.Text = "Billing Address ID"
+        Me.BillingAddressID.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Password_TB
         '
-        Me.Password_TB.Location = New System.Drawing.Point(174, 79)
+        Me.Password_TB.Location = New System.Drawing.Point(184, 79)
         Me.Password_TB.Name = "Password_TB"
         Me.Password_TB.Size = New System.Drawing.Size(136, 22)
         Me.Password_TB.TabIndex = 9
         '
         'LastName_TB
         '
-        Me.LastName_TB.Location = New System.Drawing.Point(174, 163)
+        Me.LastName_TB.Location = New System.Drawing.Point(184, 163)
         Me.LastName_TB.Name = "LastName_TB"
         Me.LastName_TB.Size = New System.Drawing.Size(136, 22)
         Me.LastName_TB.TabIndex = 10
         '
         'FirstName_TB
         '
-        Me.FirstName_TB.Location = New System.Drawing.Point(174, 135)
+        Me.FirstName_TB.Location = New System.Drawing.Point(184, 135)
         Me.FirstName_TB.Name = "FirstName_TB"
         Me.FirstName_TB.Size = New System.Drawing.Size(136, 22)
         Me.FirstName_TB.TabIndex = 11
         '
         'EmailAddress_TB
         '
-        Me.EmailAddress_TB.Location = New System.Drawing.Point(174, 107)
+        Me.EmailAddress_TB.Location = New System.Drawing.Point(184, 107)
         Me.EmailAddress_TB.Name = "EmailAddress_TB"
         Me.EmailAddress_TB.Size = New System.Drawing.Size(136, 22)
         Me.EmailAddress_TB.TabIndex = 12
         '
         'BillingAddressID_TB
         '
-        Me.BillingAddressID_TB.Location = New System.Drawing.Point(174, 219)
+        Me.BillingAddressID_TB.Location = New System.Drawing.Point(184, 219)
         Me.BillingAddressID_TB.Name = "BillingAddressID_TB"
         Me.BillingAddressID_TB.Size = New System.Drawing.Size(136, 22)
         Me.BillingAddressID_TB.TabIndex = 13
         '
         'ShippingAddressID_TB
         '
-        Me.ShippingAddressID_TB.Location = New System.Drawing.Point(174, 191)
+        Me.ShippingAddressID_TB.Location = New System.Drawing.Point(184, 191)
         Me.ShippingAddressID_TB.Name = "ShippingAddressID_TB"
         Me.ShippingAddressID_TB.Size = New System.Drawing.Size(136, 22)
         Me.ShippingAddressID_TB.TabIndex = 14
         '
         'CustomerID_TB
         '
-        Me.CustomerID_TB.Location = New System.Drawing.Point(174, 49)
+        Me.CustomerID_TB.Location = New System.Drawing.Point(184, 49)
         Me.CustomerID_TB.Name = "CustomerID_TB"
         Me.CustomerID_TB.Size = New System.Drawing.Size(136, 22)
         Me.CustomerID_TB.TabIndex = 16
@@ -194,7 +208,7 @@ Partial Class CustomerForm
         '
         'GetButton
         '
-        Me.GetButton.Location = New System.Drawing.Point(317, 49)
+        Me.GetButton.Location = New System.Drawing.Point(327, 49)
         Me.GetButton.Name = "GetButton"
         Me.GetButton.Size = New System.Drawing.Size(114, 23)
         Me.GetButton.TabIndex = 22

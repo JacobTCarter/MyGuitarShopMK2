@@ -193,6 +193,12 @@
     <Compile Include="StaffForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UpdateAddressForm.Designer.vb">
+      <DependentUpon>UpdateAddressForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateAddressForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UserLoginForm.Designer.vb">
       <DependentUpon>UserLoginForm.vb</DependentUpon>
     </Compile>
@@ -224,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewUserForm.resx">
       <DependentUpon>NewUserForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateAddressForm.resx">
+      <DependentUpon>UpdateAddressForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserLoginForm.resx">
       <DependentUpon>UserLoginForm.vb</DependentUpon>
