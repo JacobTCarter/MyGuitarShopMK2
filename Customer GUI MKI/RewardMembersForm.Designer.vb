@@ -37,7 +37,7 @@ Partial Class RewardMembersForm
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(59, 37)
+        Me.Label1.Location = New System.Drawing.Point(62, 85)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(63, 13)
         Me.Label1.TabIndex = 0
@@ -109,7 +109,7 @@ Partial Class RewardMembersForm
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(363, 120)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(44, 16)
+        Me.Label4.Size = New System.Drawing.Size(40, 16)
         Me.Label4.TabIndex = 10
         Me.Label4.Text = "$100"
         '
@@ -119,7 +119,7 @@ Partial Class RewardMembersForm
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(366, 169)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(35, 16)
+        Me.Label5.Size = New System.Drawing.Size(32, 16)
         Me.Label5.TabIndex = 11
         Me.Label5.Text = "$80"
         '

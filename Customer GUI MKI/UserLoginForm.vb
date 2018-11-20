@@ -31,12 +31,14 @@ Public Class UserLoginForm
                     command3.Parameters.AddWithValue("@fname", fNameTextBox.Text)
                     command3.Parameters.AddWithValue("@password", passwordTextBox.Text)
 
+                    FirstName = fNameTextBox.Text
                     custID = command.ExecuteScalar
                     staffID = command2.ExecuteScalar
                     adminID = command3.ExecuteScalar
 
                     'takes you to the customer form if they are a customer
                     If custID > 0 Then
+
                         CustomerForm.Show()
                         Me.Close()
                         'takes you to the staff form if they are staff

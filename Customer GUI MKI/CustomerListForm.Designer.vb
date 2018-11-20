@@ -35,22 +35,22 @@ Partial Class CustomerListForm
         '
         'back
         '
-        Me.back.Location = New System.Drawing.Point(535, 337)
+        Me.back.Location = New System.Drawing.Point(520, 314)
         Me.back.Margin = New System.Windows.Forms.Padding(2)
         Me.back.Name = "back"
         Me.back.Size = New System.Drawing.Size(56, 19)
         Me.back.TabIndex = 0
-        Me.back.Text = "Back"
+        Me.back.Text = "BACK"
         Me.back.UseVisualStyleBackColor = True
         '
         'logout
         '
-        Me.logout.Location = New System.Drawing.Point(535, 10)
+        Me.logout.Location = New System.Drawing.Point(520, 34)
         Me.logout.Margin = New System.Windows.Forms.Padding(2)
         Me.logout.Name = "logout"
-        Me.logout.Size = New System.Drawing.Size(56, 19)
+        Me.logout.Size = New System.Drawing.Size(69, 23)
         Me.logout.TabIndex = 1
-        Me.logout.Text = "Log Out"
+        Me.logout.Text = "LOGOUT"
         Me.logout.UseVisualStyleBackColor = True
         '
         'DataGridView1
@@ -65,34 +65,49 @@ Partial Class CustomerListForm
         'CustomerID
         '
         Me.CustomerID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.CustomerID.Frozen = True
         Me.CustomerID.HeaderText = "ID"
         Me.CustomerID.Name = "CustomerID"
+        Me.CustomerID.ReadOnly = True
+        Me.CustomerID.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.CustomerID.Width = 43
         '
         'Rewards
         '
         Me.Rewards.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Rewards.FillWeight = 20.0!
+        Me.Rewards.Frozen = True
         Me.Rewards.HeaderText = "Rewards"
         Me.Rewards.Name = "Rewards"
-        Me.Rewards.Width = 74
+        Me.Rewards.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Rewards.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.Rewards.Width = 55
         '
         'email
         '
         Me.email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.email.Frozen = True
         Me.email.HeaderText = "Email"
         Me.email.Name = "email"
+        Me.email.ReadOnly = True
+        Me.email.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.email.Width = 57
         '
         'fname
         '
+        Me.fname.Frozen = True
         Me.fname.HeaderText = "First Name"
         Me.fname.Name = "fname"
+        Me.fname.ReadOnly = True
+        Me.fname.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         '
         'lastname
         '
+        Me.lastname.Frozen = True
         Me.lastname.HeaderText = "Last Name"
         Me.lastname.Name = "lastname"
+        Me.lastname.ReadOnly = True
+        Me.lastname.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         '
         'CustomerListForm
         '
