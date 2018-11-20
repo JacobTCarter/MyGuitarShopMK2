@@ -24,39 +24,98 @@ Partial Class CustomerListForm
     Private Sub InitializeComponent()
         Me.back = New System.Windows.Forms.Button()
         Me.logout = New System.Windows.Forms.Button()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.CustomerID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Rewards = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.email = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fname = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lastname = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'back
         '
-        Me.back.Location = New System.Drawing.Point(713, 415)
+        Me.back.Location = New System.Drawing.Point(535, 337)
+        Me.back.Margin = New System.Windows.Forms.Padding(2)
         Me.back.Name = "back"
-        Me.back.Size = New System.Drawing.Size(75, 23)
+        Me.back.Size = New System.Drawing.Size(56, 19)
         Me.back.TabIndex = 0
         Me.back.Text = "Back"
         Me.back.UseVisualStyleBackColor = True
         '
         'logout
         '
-        Me.logout.Location = New System.Drawing.Point(713, 12)
+        Me.logout.Location = New System.Drawing.Point(535, 10)
+        Me.logout.Margin = New System.Windows.Forms.Padding(2)
         Me.logout.Name = "logout"
-        Me.logout.Size = New System.Drawing.Size(75, 23)
+        Me.logout.Size = New System.Drawing.Size(56, 19)
         Me.logout.TabIndex = 1
         Me.logout.Text = "Log Out"
         Me.logout.UseVisualStyleBackColor = True
         '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CustomerID, Me.Rewards, Me.email, Me.fname, Me.lastname})
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 34)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(491, 299)
+        Me.DataGridView1.TabIndex = 3
+        '
+        'CustomerID
+        '
+        Me.CustomerID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.CustomerID.HeaderText = "ID"
+        Me.CustomerID.Name = "CustomerID"
+        Me.CustomerID.Width = 43
+        '
+        'Rewards
+        '
+        Me.Rewards.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Rewards.FillWeight = 20.0!
+        Me.Rewards.HeaderText = "Rewards"
+        Me.Rewards.Name = "Rewards"
+        Me.Rewards.Width = 74
+        '
+        'email
+        '
+        Me.email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.email.HeaderText = "Email"
+        Me.email.Name = "email"
+        Me.email.Width = 57
+        '
+        'fname
+        '
+        Me.fname.HeaderText = "First Name"
+        Me.fname.Name = "fname"
+        '
+        'lastname
+        '
+        Me.lastname.HeaderText = "Last Name"
+        Me.lastname.Name = "lastname"
+        '
         'CustomerListForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(600, 366)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.logout)
         Me.Controls.Add(Me.back)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "CustomerListForm"
         Me.Text = "CustomerListForm"
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents back As Button
     Friend WithEvents logout As Button
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents CustomerID As DataGridViewTextBoxColumn
+    Friend WithEvents Rewards As DataGridViewTextBoxColumn
+    Friend WithEvents email As DataGridViewTextBoxColumn
+    Friend WithEvents fname As DataGridViewTextBoxColumn
+    Friend WithEvents lastname As DataGridViewTextBoxColumn
 End Class

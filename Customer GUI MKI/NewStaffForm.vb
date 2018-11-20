@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class NewStaffForm
-    Dim connection As New SqlConnection("Server= JACOB; Database = Database_Final; Integrated Security = true")
+    Dim connection As New SqlConnection(SQLcONN)
 
     Private Sub logOutButton_Click(sender As Object, e As EventArgs) Handles logOutButton.Click
         UserLoginForm.Show()

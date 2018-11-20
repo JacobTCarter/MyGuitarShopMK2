@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class UserLoginForm
-    Dim connection As New SqlConnection("Server= LAPTOP-S17TOU1U\HIYASQL; Database = Database_Final; Integrated Security = true")
+    Dim connection As New SqlConnection(SQLcONN)
 
     Private Sub NewUser_Click(sender As Object, e As EventArgs) Handles newUserButton.Click
         NewUserForm.Show()
