@@ -2,7 +2,7 @@
 
 Public Class AddressForm
     'OVERALL CONNECTION
-    Dim connection As New SqlConnection("Server= DESKTOP-IGRIGM7; Database = Database_Final; Integrated Security = true")
+    Dim connection As New SqlConnection("Server= laptop-s17tou1u; Database = Database_Final; Integrated Security = true")
 
     'SELECT
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles SubmitButton.Click

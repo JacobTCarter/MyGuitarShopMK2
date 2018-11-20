@@ -63,6 +63,17 @@ Namespace My
                 Return CType(Me("MyGuitarShopConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-S17TOU1U\HIYASQL;Initial Catalog=Database_Final;Integrated Sec"& _ 
+            "urity=True")>  _
+        Public ReadOnly Property Database_FinalConnectionString() As String
+            Get
+                Return CType(Me("Database_FinalConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 
