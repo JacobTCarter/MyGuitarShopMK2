@@ -216,6 +216,9 @@
     <EmbeddedResource Include="NewUserForm.resx">
       <DependentUpon>NewUserForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RewardMembersForm.resx">
+      <DependentUpon>RewardMembersForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserLoginForm.resx">
       <DependentUpon>UserLoginForm.vb</DependentUpon>
     </EmbeddedResource>

@@ -10,6 +10,7 @@ Public Class RewardMembersForm
         Dim conSQL As New SqlConnection(conString)
         Dim con As New SqlConnection(conString)
 
+
         Try
 
             con.Open()
