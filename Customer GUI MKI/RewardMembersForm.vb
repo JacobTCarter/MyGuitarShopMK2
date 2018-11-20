@@ -8,9 +8,9 @@ Public Class RewardMembersForm
         'This opens the connection to the database. If you use it change the server name to your server name
 
         Dim conSQL As New SqlConnection(SQLcONN)
-        Try
 
-            conSQL.Open()
+
+        conSQL.Open()
 
             Dim sql As String = "SELECT * FROM Rewards_Specification;"
 

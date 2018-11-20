@@ -56,7 +56,7 @@ Partial Class RewardMembersForm
         'gold
         '
         Me.gold.AutoSize = True
-        Me.gold.Location = New System.Drawing.Point(14, 119)
+        Me.gold.Location = New System.Drawing.Point(6, 69)
         Me.gold.Name = "gold"
         Me.gold.Size = New System.Drawing.Size(48, 17)
         Me.gold.TabIndex = 5
@@ -66,7 +66,7 @@ Partial Class RewardMembersForm
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(79, 120)
+        Me.Label2.Location = New System.Drawing.Point(71, 70)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(278, 26)
         Me.Label2.TabIndex = 6
@@ -76,7 +76,7 @@ Partial Class RewardMembersForm
         'platinum
         '
         Me.platinum.AutoSize = True
-        Me.platinum.Location = New System.Drawing.Point(14, 169)
+        Me.platinum.Location = New System.Drawing.Point(6, 119)
         Me.platinum.Name = "platinum"
         Me.platinum.Size = New System.Drawing.Size(66, 17)
         Me.platinum.TabIndex = 7
@@ -86,7 +86,7 @@ Partial Class RewardMembersForm
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(79, 169)
+        Me.Label3.Location = New System.Drawing.Point(71, 119)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(267, 39)
         Me.Label3.TabIndex = 8
@@ -96,7 +96,7 @@ Partial Class RewardMembersForm
         'Empoyee
         '
         Me.Empoyee.AutoSize = True
-        Me.Empoyee.Location = New System.Drawing.Point(14, 211)
+        Me.Empoyee.Location = New System.Drawing.Point(6, 161)
         Me.Empoyee.Name = "Empoyee"
         Me.Empoyee.Size = New System.Drawing.Size(244, 17)
         Me.Empoyee.TabIndex = 9
@@ -107,9 +107,9 @@ Partial Class RewardMembersForm
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(363, 120)
+        Me.Label4.Location = New System.Drawing.Point(355, 70)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(44, 16)
+        Me.Label4.Size = New System.Drawing.Size(40, 16)
         Me.Label4.TabIndex = 10
         Me.Label4.Text = "$100"
         '
@@ -117,16 +117,16 @@ Partial Class RewardMembersForm
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(366, 169)
+        Me.Label5.Location = New System.Drawing.Point(358, 119)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(35, 16)
+        Me.Label5.Size = New System.Drawing.Size(32, 16)
         Me.Label5.TabIndex = 11
         Me.Label5.Text = "$80"
         '
         'AddToCart_Rewards
         '
         Me.AddToCart_Rewards.DialogResult = System.Windows.Forms.DialogResult.Retry
-        Me.AddToCart_Rewards.Location = New System.Drawing.Point(141, 247)
+        Me.AddToCart_Rewards.Location = New System.Drawing.Point(174, 233)
         Me.AddToCart_Rewards.Name = "AddToCart_Rewards"
         Me.AddToCart_Rewards.Size = New System.Drawing.Size(101, 26)
         Me.AddToCart_Rewards.TabIndex = 12
