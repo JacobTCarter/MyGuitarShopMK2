@@ -20,12 +20,12 @@ Option Explicit On
  Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
  Global.System.ComponentModel.ToolboxItem(true),  _
  Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"),  _
- Global.System.Xml.Serialization.XmlRootAttribute("MyGuitarShopDataSet"),  _
+ Global.System.Xml.Serialization.XmlRootAttribute("Database_FinalDataSet"),  _
  Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")>  _
-Partial Public Class MyGuitarShopDataSet
+Partial Public Class Database_FinalDataSet
     Inherits Global.System.Data.DataSet
     
-    Private tableCustomers As CustomersDataTable
+    Private tableEMPLOYEE As EMPLOYEEDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -56,8 +56,8 @@ Partial Public Class MyGuitarShopDataSet
         If (Me.DetermineSchemaSerializationMode(info, context) = Global.System.Data.SchemaSerializationMode.IncludeSchema) Then
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXmlSchema(New Global.System.Xml.XmlTextReader(New Global.System.IO.StringReader(strSchema)))
-            If (Not (ds.Tables("Customers")) Is Nothing) Then
-                MyBase.Tables.Add(New CustomersDataTable(ds.Tables("Customers")))
+            If (Not (ds.Tables("EMPLOYEE")) Is Nothing) Then
+                MyBase.Tables.Add(New EMPLOYEEDataTable(ds.Tables("EMPLOYEE")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -80,9 +80,9 @@ Partial Public Class MyGuitarShopDataSet
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property Customers() As CustomersDataTable
+    Public ReadOnly Property EMPLOYEE() As EMPLOYEEDataTable
         Get
-            Return Me.tableCustomers
+            Return Me.tableEMPLOYEE
         End Get
     End Property
     
@@ -128,7 +128,7 @@ Partial Public Class MyGuitarShopDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Overrides Function Clone() As Global.System.Data.DataSet
-        Dim cln As MyGuitarShopDataSet = CType(MyBase.Clone,MyGuitarShopDataSet)
+        Dim cln As Database_FinalDataSet = CType(MyBase.Clone,Database_FinalDataSet)
         cln.InitVars
         cln.SchemaSerializationMode = Me.SchemaSerializationMode
         Return cln
@@ -153,8 +153,8 @@ Partial Public Class MyGuitarShopDataSet
             Me.Reset
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXml(reader)
-            If (Not (ds.Tables("Customers")) Is Nothing) Then
-                MyBase.Tables.Add(New CustomersDataTable(ds.Tables("Customers")))
+            If (Not (ds.Tables("EMPLOYEE")) Is Nothing) Then
+                MyBase.Tables.Add(New EMPLOYEEDataTable(ds.Tables("EMPLOYEE")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -188,10 +188,10 @@ Partial Public Class MyGuitarShopDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Friend Overloads Sub InitVars(ByVal initTable As Boolean)
-        Me.tableCustomers = CType(MyBase.Tables("Customers"),CustomersDataTable)
+        Me.tableEMPLOYEE = CType(MyBase.Tables("EMPLOYEE"),EMPLOYEEDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableCustomers) Is Nothing) Then
-                Me.tableCustomers.InitVars
+            If (Not (Me.tableEMPLOYEE) Is Nothing) Then
+                Me.tableEMPLOYEE.InitVars
             End If
         End If
     End Sub
@@ -199,18 +199,18 @@ Partial Public Class MyGuitarShopDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Private Sub InitClass()
-        Me.DataSetName = "MyGuitarShopDataSet"
+        Me.DataSetName = "Database_FinalDataSet"
         Me.Prefix = ""
-        Me.Namespace = "http://tempuri.org/MyGuitarShopDataSet.xsd"
+        Me.Namespace = "http://tempuri.org/Database_FinalDataSet.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
-        Me.tableCustomers = New CustomersDataTable()
-        MyBase.Tables.Add(Me.tableCustomers)
+        Me.tableEMPLOYEE = New EMPLOYEEDataTable()
+        MyBase.Tables.Add(Me.tableEMPLOYEE)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Private Function ShouldSerializeCustomers() As Boolean
+    Private Function ShouldSerializeEMPLOYEE() As Boolean
         Return false
     End Function
     
@@ -225,7 +225,7 @@ Partial Public Class MyGuitarShopDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Shared Function GetTypedDataSetSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-        Dim ds As MyGuitarShopDataSet = New MyGuitarShopDataSet()
+        Dim ds As Database_FinalDataSet = New Database_FinalDataSet()
         Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
         Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
         Dim any As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
@@ -273,35 +273,31 @@ Partial Public Class MyGuitarShopDataSet
     End Function
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Delegate Sub CustomersRowChangeEventHandler(ByVal sender As Object, ByVal e As CustomersRowChangeEvent)
+    Public Delegate Sub EMPLOYEERowChangeEventHandler(ByVal sender As Object, ByVal e As EMPLOYEERowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class CustomersDataTable
-        Inherits Global.System.Data.TypedTableBase(Of CustomersRow)
+    Partial Public Class EMPLOYEEDataTable
+        Inherits Global.System.Data.TypedTableBase(Of EMPLOYEERow)
+        
+        Private columnEmployeeID As Global.System.Data.DataColumn
         
         Private columnCustomerID As Global.System.Data.DataColumn
         
-        Private columnEmailAddress As Global.System.Data.DataColumn
+        Private columnRewardsID As Global.System.Data.DataColumn
         
-        Private columnPassword As Global.System.Data.DataColumn
+        Private columnEmpFirstName As Global.System.Data.DataColumn
         
-        Private columnFirstName As Global.System.Data.DataColumn
-        
-        Private columnLastName As Global.System.Data.DataColumn
-        
-        Private columnShippingAddressID As Global.System.Data.DataColumn
-        
-        Private columnBillingAddressID As Global.System.Data.DataColumn
+        Private columnEmpLastName As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "Customers"
+            Me.TableName = "EMPLOYEE"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -334,6 +330,14 @@ Partial Public Class MyGuitarShopDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property EmployeeIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnEmployeeID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public ReadOnly Property CustomerIDColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnCustomerID
@@ -342,49 +346,25 @@ Partial Public Class MyGuitarShopDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property EmailAddressColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property RewardsIDColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnEmailAddress
+                Return Me.columnRewardsID
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property PasswordColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property EmpFirstNameColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnPassword
+                Return Me.columnEmpFirstName
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property FirstNameColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property EmpLastNameColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnFirstName
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property LastNameColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnLastName
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property ShippingAddressIDColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnShippingAddressID
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property BillingAddressIDColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnBillingAddressID
+                Return Me.columnEmpLastName
             End Get
         End Property
         
@@ -399,50 +379,50 @@ Partial Public Class MyGuitarShopDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As CustomersRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As EMPLOYEERow
             Get
-                Return CType(Me.Rows(index),CustomersRow)
+                Return CType(Me.Rows(index),EMPLOYEERow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event CustomersRowChanging As CustomersRowChangeEventHandler
+        Public Event EMPLOYEERowChanging As EMPLOYEERowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event CustomersRowChanged As CustomersRowChangeEventHandler
+        Public Event EMPLOYEERowChanged As EMPLOYEERowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event CustomersRowDeleting As CustomersRowChangeEventHandler
+        Public Event EMPLOYEERowDeleting As EMPLOYEERowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event CustomersRowDeleted As CustomersRowChangeEventHandler
+        Public Event EMPLOYEERowDeleted As EMPLOYEERowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Sub AddCustomersRow(ByVal row As CustomersRow)
+        Public Overloads Sub AddEMPLOYEERow(ByVal row As EMPLOYEERow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddCustomersRow(ByVal EmailAddress As String, ByVal Password As String, ByVal FirstName As String, ByVal LastName As String, ByVal ShippingAddressID As Integer, ByVal BillingAddressID As Integer) As CustomersRow
-            Dim rowCustomersRow As CustomersRow = CType(Me.NewRow,CustomersRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, EmailAddress, Password, FirstName, LastName, ShippingAddressID, BillingAddressID}
-            rowCustomersRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowCustomersRow)
-            Return rowCustomersRow
+        Public Overloads Function AddEMPLOYEERow(ByVal CustomerID As Integer, ByVal RewardsID As Integer, ByVal EmpFirstName As String, ByVal EmpLastName As String) As EMPLOYEERow
+            Dim rowEMPLOYEERow As EMPLOYEERow = CType(Me.NewRow,EMPLOYEERow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, CustomerID, RewardsID, EmpFirstName, EmpLastName}
+            rowEMPLOYEERow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowEMPLOYEERow)
+            Return rowEMPLOYEERow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function FindByCustomerID(ByVal CustomerID As Integer) As CustomersRow
-            Return CType(Me.Rows.Find(New Object() {CustomerID}),CustomersRow)
+        Public Function FindByEmployeeID(ByVal EmployeeID As Integer) As EMPLOYEERow
+            Return CType(Me.Rows.Find(New Object() {EmployeeID}),EMPLOYEERow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As CustomersDataTable = CType(MyBase.Clone,CustomersDataTable)
+            Dim cln As EMPLOYEEDataTable = CType(MyBase.Clone,EMPLOYEEDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -450,79 +430,69 @@ Partial Public Class MyGuitarShopDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New CustomersDataTable()
+            Return New EMPLOYEEDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Friend Sub InitVars()
+            Me.columnEmployeeID = MyBase.Columns("EmployeeID")
             Me.columnCustomerID = MyBase.Columns("CustomerID")
-            Me.columnEmailAddress = MyBase.Columns("EmailAddress")
-            Me.columnPassword = MyBase.Columns("Password")
-            Me.columnFirstName = MyBase.Columns("FirstName")
-            Me.columnLastName = MyBase.Columns("LastName")
-            Me.columnShippingAddressID = MyBase.Columns("ShippingAddressID")
-            Me.columnBillingAddressID = MyBase.Columns("BillingAddressID")
+            Me.columnRewardsID = MyBase.Columns("RewardsID")
+            Me.columnEmpFirstName = MyBase.Columns("EmpFirstName")
+            Me.columnEmpLastName = MyBase.Columns("EmpLastName")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitClass()
+            Me.columnEmployeeID = New Global.System.Data.DataColumn("EmployeeID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnEmployeeID)
             Me.columnCustomerID = New Global.System.Data.DataColumn("CustomerID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCustomerID)
-            Me.columnEmailAddress = New Global.System.Data.DataColumn("EmailAddress", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnEmailAddress)
-            Me.columnPassword = New Global.System.Data.DataColumn("Password", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnPassword)
-            Me.columnFirstName = New Global.System.Data.DataColumn("FirstName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnFirstName)
-            Me.columnLastName = New Global.System.Data.DataColumn("LastName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnLastName)
-            Me.columnShippingAddressID = New Global.System.Data.DataColumn("ShippingAddressID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnShippingAddressID)
-            Me.columnBillingAddressID = New Global.System.Data.DataColumn("BillingAddressID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnBillingAddressID)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnCustomerID}, true))
-            Me.columnCustomerID.AutoIncrement = true
-            Me.columnCustomerID.AutoIncrementSeed = -1
-            Me.columnCustomerID.AutoIncrementStep = -1
-            Me.columnCustomerID.AllowDBNull = false
-            Me.columnCustomerID.ReadOnly = true
-            Me.columnCustomerID.Unique = true
-            Me.columnEmailAddress.AllowDBNull = false
-            Me.columnEmailAddress.MaxLength = 255
-            Me.columnPassword.AllowDBNull = false
-            Me.columnPassword.MaxLength = 60
-            Me.columnFirstName.AllowDBNull = false
-            Me.columnFirstName.MaxLength = 60
-            Me.columnLastName.AllowDBNull = false
-            Me.columnLastName.MaxLength = 60
+            Me.columnRewardsID = New Global.System.Data.DataColumn("RewardsID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnRewardsID)
+            Me.columnEmpFirstName = New Global.System.Data.DataColumn("EmpFirstName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnEmpFirstName)
+            Me.columnEmpLastName = New Global.System.Data.DataColumn("EmpLastName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnEmpLastName)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnEmployeeID}, true))
+            Me.columnEmployeeID.AutoIncrement = true
+            Me.columnEmployeeID.AutoIncrementSeed = -1
+            Me.columnEmployeeID.AutoIncrementStep = -1
+            Me.columnEmployeeID.AllowDBNull = false
+            Me.columnEmployeeID.ReadOnly = true
+            Me.columnEmployeeID.Unique = true
+            Me.columnEmpFirstName.AllowDBNull = false
+            Me.columnEmpFirstName.MaxLength = 225
+            Me.columnEmpLastName.AllowDBNull = false
+            Me.columnEmpLastName.MaxLength = 225
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function NewCustomersRow() As CustomersRow
-            Return CType(Me.NewRow,CustomersRow)
+        Public Function NewEMPLOYEERow() As EMPLOYEERow
+            Return CType(Me.NewRow,EMPLOYEERow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New CustomersRow(builder)
+            Return New EMPLOYEERow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(CustomersRow)
+            Return GetType(EMPLOYEERow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.CustomersRowChangedEvent) Is Nothing) Then
-                RaiseEvent CustomersRowChanged(Me, New CustomersRowChangeEvent(CType(e.Row,CustomersRow), e.Action))
+            If (Not (Me.EMPLOYEERowChangedEvent) Is Nothing) Then
+                RaiseEvent EMPLOYEERowChanged(Me, New EMPLOYEERowChangeEvent(CType(e.Row,EMPLOYEERow), e.Action))
             End If
         End Sub
         
@@ -530,8 +500,8 @@ Partial Public Class MyGuitarShopDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.CustomersRowChangingEvent) Is Nothing) Then
-                RaiseEvent CustomersRowChanging(Me, New CustomersRowChangeEvent(CType(e.Row,CustomersRow), e.Action))
+            If (Not (Me.EMPLOYEERowChangingEvent) Is Nothing) Then
+                RaiseEvent EMPLOYEERowChanging(Me, New EMPLOYEERowChangeEvent(CType(e.Row,EMPLOYEERow), e.Action))
             End If
         End Sub
         
@@ -539,8 +509,8 @@ Partial Public Class MyGuitarShopDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.CustomersRowDeletedEvent) Is Nothing) Then
-                RaiseEvent CustomersRowDeleted(Me, New CustomersRowChangeEvent(CType(e.Row,CustomersRow), e.Action))
+            If (Not (Me.EMPLOYEERowDeletedEvent) Is Nothing) Then
+                RaiseEvent EMPLOYEERowDeleted(Me, New EMPLOYEERowChangeEvent(CType(e.Row,EMPLOYEERow), e.Action))
             End If
         End Sub
         
@@ -548,14 +518,14 @@ Partial Public Class MyGuitarShopDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.CustomersRowDeletingEvent) Is Nothing) Then
-                RaiseEvent CustomersRowDeleting(Me, New CustomersRowChangeEvent(CType(e.Row,CustomersRow), e.Action))
+            If (Not (Me.EMPLOYEERowDeletingEvent) Is Nothing) Then
+                RaiseEvent EMPLOYEERowDeleting(Me, New EMPLOYEERowChangeEvent(CType(e.Row,EMPLOYEERow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub RemoveCustomersRow(ByVal row As CustomersRow)
+        Public Sub RemoveEMPLOYEERow(ByVal row As EMPLOYEERow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -564,7 +534,7 @@ Partial Public Class MyGuitarShopDataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As MyGuitarShopDataSet = New MyGuitarShopDataSet()
+            Dim ds As Database_FinalDataSet = New Database_FinalDataSet()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -582,7 +552,7 @@ Partial Public Class MyGuitarShopDataSet
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "CustomersDataTable"
+            attribute2.FixedValue = "EMPLOYEEDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -629,125 +599,103 @@ Partial Public Class MyGuitarShopDataSet
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class CustomersRow
+    Partial Public Class EMPLOYEERow
         Inherits Global.System.Data.DataRow
         
-        Private tableCustomers As CustomersDataTable
+        Private tableEMPLOYEE As EMPLOYEEDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableCustomers = CType(Me.Table,CustomersDataTable)
+            Me.tableEMPLOYEE = CType(Me.Table,EMPLOYEEDataTable)
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property EmployeeID() As Integer
+            Get
+                Return CType(Me(Me.tableEMPLOYEE.EmployeeIDColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableEMPLOYEE.EmployeeIDColumn) = value
+            End Set
+        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property CustomerID() As Integer
             Get
-                Return CType(Me(Me.tableCustomers.CustomerIDColumn),Integer)
-            End Get
-            Set
-                Me(Me.tableCustomers.CustomerIDColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property EmailAddress() As String
-            Get
-                Return CType(Me(Me.tableCustomers.EmailAddressColumn),String)
-            End Get
-            Set
-                Me(Me.tableCustomers.EmailAddressColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Password() As String
-            Get
-                Return CType(Me(Me.tableCustomers.PasswordColumn),String)
-            End Get
-            Set
-                Me(Me.tableCustomers.PasswordColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property FirstName() As String
-            Get
-                Return CType(Me(Me.tableCustomers.FirstNameColumn),String)
-            End Get
-            Set
-                Me(Me.tableCustomers.FirstNameColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property LastName() As String
-            Get
-                Return CType(Me(Me.tableCustomers.LastNameColumn),String)
-            End Get
-            Set
-                Me(Me.tableCustomers.LastNameColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property ShippingAddressID() As Integer
-            Get
                 Try 
-                    Return CType(Me(Me.tableCustomers.ShippingAddressIDColumn),Integer)
+                    Return CType(Me(Me.tableEMPLOYEE.CustomerIDColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ShippingAddressID' in table 'Customers' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CustomerID' in table 'EMPLOYEE' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableCustomers.ShippingAddressIDColumn) = value
+                Me(Me.tableEMPLOYEE.CustomerIDColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property BillingAddressID() As Integer
+        Public Property RewardsID() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableCustomers.BillingAddressIDColumn),Integer)
+                    Return CType(Me(Me.tableEMPLOYEE.RewardsIDColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'BillingAddressID' in table 'Customers' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'RewardsID' in table 'EMPLOYEE' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableCustomers.BillingAddressIDColumn) = value
+                Me(Me.tableEMPLOYEE.RewardsIDColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsShippingAddressIDNull() As Boolean
-            Return Me.IsNull(Me.tableCustomers.ShippingAddressIDColumn)
+        Public Property EmpFirstName() As String
+            Get
+                Return CType(Me(Me.tableEMPLOYEE.EmpFirstNameColumn),String)
+            End Get
+            Set
+                Me(Me.tableEMPLOYEE.EmpFirstNameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property EmpLastName() As String
+            Get
+                Return CType(Me(Me.tableEMPLOYEE.EmpLastNameColumn),String)
+            End Get
+            Set
+                Me(Me.tableEMPLOYEE.EmpLastNameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsCustomerIDNull() As Boolean
+            Return Me.IsNull(Me.tableEMPLOYEE.CustomerIDColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetShippingAddressIDNull()
-            Me(Me.tableCustomers.ShippingAddressIDColumn) = Global.System.Convert.DBNull
+        Public Sub SetCustomerIDNull()
+            Me(Me.tableEMPLOYEE.CustomerIDColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsBillingAddressIDNull() As Boolean
-            Return Me.IsNull(Me.tableCustomers.BillingAddressIDColumn)
+        Public Function IsRewardsIDNull() As Boolean
+            Return Me.IsNull(Me.tableEMPLOYEE.RewardsIDColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetBillingAddressIDNull()
-            Me(Me.tableCustomers.BillingAddressIDColumn) = Global.System.Convert.DBNull
+        Public Sub SetRewardsIDNull()
+            Me(Me.tableEMPLOYEE.RewardsIDColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -755,16 +703,16 @@ Partial Public Class MyGuitarShopDataSet
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Class CustomersRowChangeEvent
+    Public Class EMPLOYEERowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As CustomersRow
+        Private eventRow As EMPLOYEERow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New(ByVal row As CustomersRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As EMPLOYEERow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -772,7 +720,7 @@ Partial Public Class MyGuitarShopDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Row() As CustomersRow
+        Public ReadOnly Property Row() As EMPLOYEERow
             Get
                 Return Me.eventRow
             End Get
@@ -788,7 +736,7 @@ Partial Public Class MyGuitarShopDataSet
     End Class
 End Class
 
-Namespace MyGuitarShopDataSetTableAdapters
+Namespace Database_FinalDataSetTableAdapters
     
     '''<summary>
     '''Represents the connection and commands used to retrieve and save data.
@@ -799,7 +747,7 @@ Namespace MyGuitarShopDataSetTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class CustomersTableAdapter
+    Partial Public Class EMPLOYEETableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -916,85 +864,69 @@ Namespace MyGuitarShopDataSetTableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "Customers"
+            tableMapping.DataSetTable = "EMPLOYEE"
+            tableMapping.ColumnMappings.Add("EmployeeID", "EmployeeID")
             tableMapping.ColumnMappings.Add("CustomerID", "CustomerID")
-            tableMapping.ColumnMappings.Add("EmailAddress", "EmailAddress")
-            tableMapping.ColumnMappings.Add("Password", "Password")
-            tableMapping.ColumnMappings.Add("FirstName", "FirstName")
-            tableMapping.ColumnMappings.Add("LastName", "LastName")
-            tableMapping.ColumnMappings.Add("ShippingAddressID", "ShippingAddressID")
-            tableMapping.ColumnMappings.Add("BillingAddressID", "BillingAddressID")
+            tableMapping.ColumnMappings.Add("RewardsID", "RewardsID")
+            tableMapping.ColumnMappings.Add("EmpFirstName", "EmpFirstName")
+            tableMapping.ColumnMappings.Add("EmpLastName", "EmpLastName")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Customers] WHERE (([CustomerID] = @Original_CustomerID) AND (["& _ 
-                "EmailAddress] = @Original_EmailAddress) AND ([Password] = @Original_Password) AN"& _ 
-                "D ([FirstName] = @Original_FirstName) AND ([LastName] = @Original_LastName) AND "& _ 
-                "((@IsNull_ShippingAddressID = 1 AND [ShippingAddressID] IS NULL) OR ([ShippingAd"& _ 
-                "dressID] = @Original_ShippingAddressID)) AND ((@IsNull_BillingAddressID = 1 AND "& _ 
-                "[BillingAddressID] IS NULL) OR ([BillingAddressID] = @Original_BillingAddressID)"& _ 
-                "))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[EMPLOYEE] WHERE (([EmployeeID] = @Original_EmployeeID) AND ((@"& _ 
+                "IsNull_CustomerID = 1 AND [CustomerID] IS NULL) OR ([CustomerID] = @Original_Cus"& _ 
+                "tomerID)) AND ((@IsNull_RewardsID = 1 AND [RewardsID] IS NULL) OR ([RewardsID] ="& _ 
+                " @Original_RewardsID)) AND ([EmpFirstName] = @Original_EmpFirstName) AND ([EmpLa"& _ 
+                "stName] = @Original_EmpLastName))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_EmployeeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EmployeeID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CustomerID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustomerID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CustomerID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustomerID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_EmailAddress", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EmailAddress", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Password", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Password", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_FirstName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FirstName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_LastName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LastName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ShippingAddressID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShippingAddressID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ShippingAddressID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShippingAddressID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BillingAddressID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BillingAddressID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BillingAddressID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BillingAddressID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_RewardsID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RewardsID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_RewardsID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RewardsID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_EmpFirstName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EmpFirstName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_EmpLastName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EmpLastName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Customers] ([EmailAddress], [Password], [FirstName], [LastName"& _ 
-                "], [ShippingAddressID], [BillingAddressID]) VALUES (@EmailAddress, @Password, @F"& _ 
-                "irstName, @LastName, @ShippingAddressID, @BillingAddressID);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT CustomerID,"& _ 
-                " EmailAddress, Password, FirstName, LastName, ShippingAddressID, BillingAddressI"& _ 
-                "D FROM Customers WHERE (CustomerID = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[EMPLOYEE] ([CustomerID], [RewardsID], [EmpFirstName], [EmpLast"& _ 
+                "Name]) VALUES (@CustomerID, @RewardsID, @EmpFirstName, @EmpLastName);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Em"& _ 
+                "ployeeID, CustomerID, RewardsID, EmpFirstName, EmpLastName FROM EMPLOYEE WHERE ("& _ 
+                "EmployeeID = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@EmailAddress", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EmailAddress", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Password", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FirstName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FirstName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@LastName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LastName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ShippingAddressID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShippingAddressID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BillingAddressID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BillingAddressID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CustomerID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustomerID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RewardsID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RewardsID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@EmpFirstName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EmpFirstName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@EmpLastName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EmpLastName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Customers] SET [EmailAddress] = @EmailAddress, [Password] = @Passwo"& _ 
-                "rd, [FirstName] = @FirstName, [LastName] = @LastName, [ShippingAddressID] = @Shi"& _ 
-                "ppingAddressID, [BillingAddressID] = @BillingAddressID WHERE (([CustomerID] = @O"& _ 
-                "riginal_CustomerID) AND ([EmailAddress] = @Original_EmailAddress) AND ([Password"& _ 
-                "] = @Original_Password) AND ([FirstName] = @Original_FirstName) AND ([LastName] "& _ 
-                "= @Original_LastName) AND ((@IsNull_ShippingAddressID = 1 AND [ShippingAddressID"& _ 
-                "] IS NULL) OR ([ShippingAddressID] = @Original_ShippingAddressID)) AND ((@IsNull"& _ 
-                "_BillingAddressID = 1 AND [BillingAddressID] IS NULL) OR ([BillingAddressID] = @"& _ 
-                "Original_BillingAddressID)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT CustomerID, EmailAddress, Password, FirstN"& _ 
-                "ame, LastName, ShippingAddressID, BillingAddressID FROM Customers WHERE (Custome"& _ 
-                "rID = @CustomerID)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[EMPLOYEE] SET [CustomerID] = @CustomerID, [RewardsID] = @RewardsID,"& _ 
+                " [EmpFirstName] = @EmpFirstName, [EmpLastName] = @EmpLastName WHERE (([EmployeeI"& _ 
+                "D] = @Original_EmployeeID) AND ((@IsNull_CustomerID = 1 AND [CustomerID] IS NULL"& _ 
+                ") OR ([CustomerID] = @Original_CustomerID)) AND ((@IsNull_RewardsID = 1 AND [Rew"& _ 
+                "ardsID] IS NULL) OR ([RewardsID] = @Original_RewardsID)) AND ([EmpFirstName] = @"& _ 
+                "Original_EmpFirstName) AND ([EmpLastName] = @Original_EmpLastName));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Emp"& _ 
+                "loyeeID, CustomerID, RewardsID, EmpFirstName, EmpLastName FROM EMPLOYEE WHERE (E"& _ 
+                "mployeeID = @EmployeeID)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@EmailAddress", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EmailAddress", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Password", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FirstName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FirstName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@LastName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LastName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ShippingAddressID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShippingAddressID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BillingAddressID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BillingAddressID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CustomerID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustomerID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RewardsID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RewardsID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@EmpFirstName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EmpFirstName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@EmpLastName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EmpLastName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_EmployeeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EmployeeID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CustomerID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustomerID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CustomerID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustomerID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_EmailAddress", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EmailAddress", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Password", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Password", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_FirstName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FirstName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_LastName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LastName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ShippingAddressID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShippingAddressID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ShippingAddressID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShippingAddressID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BillingAddressID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BillingAddressID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BillingAddressID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BillingAddressID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CustomerID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "CustomerID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_RewardsID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RewardsID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_RewardsID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RewardsID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_EmpFirstName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EmpFirstName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_EmpLastName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EmpLastName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@EmployeeID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "EmployeeID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.Customer_GUI_MKI.My.MySettings.Default.MyGuitarShopConnectionString
+            Me._connection.ConnectionString = Global.Customer_GUI_MKI.My.MySettings.Default.Database_FinalConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1003,12 +935,12 @@ Namespace MyGuitarShopDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT CustomerID, EmailAddress, Password, FirstName, LastName, ShippingAddressID"& _ 
-                ", BillingAddressID FROM dbo.Customers"
+            Me._commandCollection(0).CommandText = "SELECT EmployeeID, CustomerID, RewardsID, EmpFirstName, EmpLastName FROM dbo.EMPL"& _ 
+                "OYEE"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT * FROM dbo.Customers WHERE CustomerID = 485"
+            Me._commandCollection(1).CommandText = "SELECT * FROM dbo.EMPLOYEE"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -1016,7 +948,7 @@ Namespace MyGuitarShopDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As MyGuitarShopDataSet.CustomersDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As Database_FinalDataSet.EMPLOYEEDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -1029,9 +961,9 @@ Namespace MyGuitarShopDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As MyGuitarShopDataSet.CustomersDataTable
+        Public Overloads Overridable Function GetData() As Database_FinalDataSet.EMPLOYEEDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As MyGuitarShopDataSet.CustomersDataTable = New MyGuitarShopDataSet.CustomersDataTable()
+            Dim dataTable As Database_FinalDataSet.EMPLOYEEDataTable = New Database_FinalDataSet.EMPLOYEEDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -1040,7 +972,7 @@ Namespace MyGuitarShopDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillBy(ByVal dataTable As MyGuitarShopDataSet.CustomersDataTable) As Integer
+        Public Overloads Overridable Function FillBy(ByVal dataTable As Database_FinalDataSet.EMPLOYEEDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -1052,15 +984,15 @@ Namespace MyGuitarShopDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As MyGuitarShopDataSet.CustomersDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As Database_FinalDataSet.EMPLOYEEDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As MyGuitarShopDataSet) As Integer
-            Return Me.Adapter.Update(dataSet, "Customers")
+        Public Overloads Overridable Function Update(ByVal dataSet As Database_FinalDataSet) As Integer
+            Return Me.Adapter.Update(dataSet, "EMPLOYEE")
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1081,41 +1013,31 @@ Namespace MyGuitarShopDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_CustomerID As Integer, ByVal Original_EmailAddress As String, ByVal Original_Password As String, ByVal Original_FirstName As String, ByVal Original_LastName As String, ByVal Original_ShippingAddressID As Global.System.Nullable(Of Integer), ByVal Original_BillingAddressID As Global.System.Nullable(Of Integer)) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_CustomerID,Integer)
-            If (Original_EmailAddress Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_EmailAddress")
+        Public Overloads Overridable Function Delete(ByVal Original_EmployeeID As Integer, ByVal Original_CustomerID As Global.System.Nullable(Of Integer), ByVal Original_RewardsID As Global.System.Nullable(Of Integer), ByVal Original_EmpFirstName As String, ByVal Original_EmpLastName As String) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_EmployeeID,Integer)
+            If (Original_CustomerID.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_CustomerID.Value,Integer)
             Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_EmailAddress,String)
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
-            If (Original_Password Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Password")
+            If (Original_RewardsID.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_RewardsID.Value,Integer)
             Else
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_Password,String)
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
-            If (Original_FirstName Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_FirstName")
+            If (Original_EmpFirstName Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_EmpFirstName")
             Else
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_FirstName,String)
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_EmpFirstName,String)
             End If
-            If (Original_LastName Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_LastName")
+            If (Original_EmpLastName Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_EmpLastName")
             Else
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_LastName,String)
-            End If
-            If (Original_ShippingAddressID.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_ShippingAddressID.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
-            End If
-            If (Original_BillingAddressID.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_BillingAddressID.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_EmpLastName,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -1136,36 +1058,26 @@ Namespace MyGuitarShopDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal EmailAddress As String, ByVal Password As String, ByVal FirstName As String, ByVal LastName As String, ByVal ShippingAddressID As Global.System.Nullable(Of Integer), ByVal BillingAddressID As Global.System.Nullable(Of Integer)) As Integer
-            If (EmailAddress Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("EmailAddress")
+        Public Overloads Overridable Function Insert(ByVal CustomerID As Global.System.Nullable(Of Integer), ByVal RewardsID As Global.System.Nullable(Of Integer), ByVal EmpFirstName As String, ByVal EmpLastName As String) As Integer
+            If (CustomerID.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(CustomerID.Value,Integer)
             Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(EmailAddress,String)
+                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             End If
-            If (Password Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Password")
+            If (RewardsID.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(RewardsID.Value,Integer)
             Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Password,String)
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            If (FirstName Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("FirstName")
+            If (EmpFirstName Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("EmpFirstName")
             Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(FirstName,String)
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(EmpFirstName,String)
             End If
-            If (LastName Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("LastName")
+            If (EmpLastName Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("EmpLastName")
             Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(LastName,String)
-            End If
-            If (ShippingAddressID.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(ShippingAddressID.Value,Integer)
-            Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
-            End If
-            If (BillingAddressID.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(5).Value = CType(BillingAddressID.Value,Integer)
-            Else
-                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(EmpLastName,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -1186,73 +1098,53 @@ Namespace MyGuitarShopDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal EmailAddress As String, ByVal Password As String, ByVal FirstName As String, ByVal LastName As String, ByVal ShippingAddressID As Global.System.Nullable(Of Integer), ByVal BillingAddressID As Global.System.Nullable(Of Integer), ByVal Original_CustomerID As Integer, ByVal Original_EmailAddress As String, ByVal Original_Password As String, ByVal Original_FirstName As String, ByVal Original_LastName As String, ByVal Original_ShippingAddressID As Global.System.Nullable(Of Integer), ByVal Original_BillingAddressID As Global.System.Nullable(Of Integer), ByVal CustomerID As Integer) As Integer
-            If (EmailAddress Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("EmailAddress")
+        Public Overloads Overridable Function Update(ByVal CustomerID As Global.System.Nullable(Of Integer), ByVal RewardsID As Global.System.Nullable(Of Integer), ByVal EmpFirstName As String, ByVal EmpLastName As String, ByVal Original_EmployeeID As Integer, ByVal Original_CustomerID As Global.System.Nullable(Of Integer), ByVal Original_RewardsID As Global.System.Nullable(Of Integer), ByVal Original_EmpFirstName As String, ByVal Original_EmpLastName As String, ByVal EmployeeID As Integer) As Integer
+            If (CustomerID.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(CustomerID.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(EmailAddress,String)
+                Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             End If
-            If (Password Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Password")
+            If (RewardsID.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(RewardsID.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Password,String)
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            If (FirstName Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("FirstName")
+            If (EmpFirstName Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("EmpFirstName")
             Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(FirstName,String)
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(EmpFirstName,String)
             End If
-            If (LastName Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("LastName")
+            If (EmpLastName Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("EmpLastName")
             Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(LastName,String)
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(EmpLastName,String)
             End If
-            If (ShippingAddressID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(ShippingAddressID.Value,Integer)
+            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_EmployeeID,Integer)
+            If (Original_CustomerID.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_CustomerID.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
             End If
-            If (BillingAddressID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(BillingAddressID.Value,Integer)
+            If (Original_RewardsID.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_RewardsID.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_CustomerID,Integer)
-            If (Original_EmailAddress Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_EmailAddress")
+            If (Original_EmpFirstName Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_EmpFirstName")
             Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_EmailAddress,String)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_EmpFirstName,String)
             End If
-            If (Original_Password Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Password")
+            If (Original_EmpLastName Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_EmpLastName")
             Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_Password,String)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_EmpLastName,String)
             End If
-            If (Original_FirstName Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_FirstName")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_FirstName,String)
-            End If
-            If (Original_LastName Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_LastName")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_LastName,String)
-            End If
-            If (Original_ShippingAddressID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_ShippingAddressID.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
-            End If
-            If (Original_BillingAddressID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_BillingAddressID.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
-            End If
-            Me.Adapter.UpdateCommand.Parameters(15).Value = CType(CustomerID,Integer)
+            Me.Adapter.UpdateCommand.Parameters(11).Value = CType(EmployeeID,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -1272,8 +1164,8 @@ Namespace MyGuitarShopDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal EmailAddress As String, ByVal Password As String, ByVal FirstName As String, ByVal LastName As String, ByVal ShippingAddressID As Global.System.Nullable(Of Integer), ByVal BillingAddressID As Global.System.Nullable(Of Integer), ByVal Original_CustomerID As Integer, ByVal Original_EmailAddress As String, ByVal Original_Password As String, ByVal Original_FirstName As String, ByVal Original_LastName As String, ByVal Original_ShippingAddressID As Global.System.Nullable(Of Integer), ByVal Original_BillingAddressID As Global.System.Nullable(Of Integer)) As Integer
-            Return Me.Update(EmailAddress, Password, FirstName, LastName, ShippingAddressID, BillingAddressID, Original_CustomerID, Original_EmailAddress, Original_Password, Original_FirstName, Original_LastName, Original_ShippingAddressID, Original_BillingAddressID, Original_CustomerID)
+        Public Overloads Overridable Function Update(ByVal CustomerID As Global.System.Nullable(Of Integer), ByVal RewardsID As Global.System.Nullable(Of Integer), ByVal EmpFirstName As String, ByVal EmpLastName As String, ByVal Original_EmployeeID As Integer, ByVal Original_CustomerID As Global.System.Nullable(Of Integer), ByVal Original_RewardsID As Global.System.Nullable(Of Integer), ByVal Original_EmpFirstName As String, ByVal Original_EmpLastName As String) As Integer
+            Return Me.Update(CustomerID, RewardsID, EmpFirstName, EmpLastName, Original_EmployeeID, Original_CustomerID, Original_RewardsID, Original_EmpFirstName, Original_EmpLastName, Original_EmployeeID)
         End Function
     End Class
     
@@ -1290,7 +1182,7 @@ Namespace MyGuitarShopDataSetTableAdapters
         
         Private _updateOrder As UpdateOrderOption
         
-        Private _customersTableAdapter As CustomersTableAdapter
+        Private _eMPLOYEETableAdapter As EMPLOYEETableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -1312,12 +1204,12 @@ Namespace MyGuitarShopDataSetTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property CustomersTableAdapter() As CustomersTableAdapter
+        Public Property EMPLOYEETableAdapter() As EMPLOYEETableAdapter
             Get
-                Return Me._customersTableAdapter
+                Return Me._eMPLOYEETableAdapter
             End Get
             Set
-                Me._customersTableAdapter = value
+                Me._eMPLOYEETableAdapter = value
             End Set
         End Property
         
@@ -1340,9 +1232,9 @@ Namespace MyGuitarShopDataSetTableAdapters
                 If (Not (Me._connection) Is Nothing) Then
                     Return Me._connection
                 End If
-                If ((Not (Me._customersTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._customersTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._customersTableAdapter.Connection
+                If ((Not (Me._eMPLOYEETableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._eMPLOYEETableAdapter.Connection) Is Nothing)) Then
+                    Return Me._eMPLOYEETableAdapter.Connection
                 End If
                 Return Nothing
             End Get
@@ -1357,7 +1249,7 @@ Namespace MyGuitarShopDataSetTableAdapters
         Public ReadOnly Property TableAdapterInstanceCount() As Integer
             Get
                 Dim count As Integer = 0
-                If (Not (Me._customersTableAdapter) Is Nothing) Then
+                If (Not (Me._eMPLOYEETableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -1369,14 +1261,14 @@ Namespace MyGuitarShopDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Function UpdateUpdatedRows(ByVal dataSet As MyGuitarShopDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateUpdatedRows(ByVal dataSet As Database_FinalDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._customersTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Customers.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._eMPLOYEETableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.EMPLOYEE.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._customersTableAdapter.Update(updatedRows))
+                    result = (result + Me._eMPLOYEETableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -1388,13 +1280,13 @@ Namespace MyGuitarShopDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Function UpdateInsertedRows(ByVal dataSet As MyGuitarShopDataSet, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateInsertedRows(ByVal dataSet As Database_FinalDataSet, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._customersTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Customers.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._eMPLOYEETableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.EMPLOYEE.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._customersTableAdapter.Update(addedRows))
+                    result = (result + Me._eMPLOYEETableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -1406,13 +1298,13 @@ Namespace MyGuitarShopDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Function UpdateDeletedRows(ByVal dataSet As MyGuitarShopDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateDeletedRows(ByVal dataSet As Database_FinalDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._customersTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Customers.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._eMPLOYEETableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.EMPLOYEE.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._customersTableAdapter.Update(deletedRows))
+                    result = (result + Me._eMPLOYEETableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -1450,15 +1342,15 @@ Namespace MyGuitarShopDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overridable Function UpdateAll(ByVal dataSet As MyGuitarShopDataSet) As Integer
+        Public Overridable Function UpdateAll(ByVal dataSet As Database_FinalDataSet) As Integer
             If (dataSet Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("dataSet")
             End If
             If (dataSet.HasChanges = false) Then
                 Return 0
             End If
-            If ((Not (Me._customersTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._customersTableAdapter.Connection) = false)) Then
+            If ((Not (Me._eMPLOYEETableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._eMPLOYEETableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -1494,13 +1386,13 @@ Namespace MyGuitarShopDataSetTableAdapters
             Try 
                 '---- Prepare for update -----------
                 '
-                If (Not (Me._customersTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._customersTableAdapter, Me._customersTableAdapter.Connection)
-                    Me._customersTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
-                    Me._customersTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
-                    If Me._customersTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._customersTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._customersTableAdapter.Adapter)
+                If (Not (Me._eMPLOYEETableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._eMPLOYEETableAdapter, Me._eMPLOYEETableAdapter.Connection)
+                    Me._eMPLOYEETableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._eMPLOYEETableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._eMPLOYEETableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._eMPLOYEETableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._eMPLOYEETableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -1563,9 +1455,9 @@ Namespace MyGuitarShopDataSetTableAdapters
                 If workConnOpened Then
                     workConnection.Close
                 End If
-                If (Not (Me._customersTableAdapter) Is Nothing) Then
-                    Me._customersTableAdapter.Connection = CType(revertConnections(Me._customersTableAdapter),Global.System.Data.SqlClient.SqlConnection)
-                    Me._customersTableAdapter.Transaction = Nothing
+                If (Not (Me._eMPLOYEETableAdapter) Is Nothing) Then
+                    Me._eMPLOYEETableAdapter.Connection = CType(revertConnections(Me._eMPLOYEETableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._eMPLOYEETableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

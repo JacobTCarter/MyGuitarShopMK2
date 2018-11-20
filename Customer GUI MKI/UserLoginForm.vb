@@ -35,12 +35,15 @@ Public Class UserLoginForm
                     staffID = command2.ExecuteScalar
                     adminID = command3.ExecuteScalar
 
+                    'takes you to the customer form if they are a customer
                     If custID > 0 Then
                         CustomerForm.Show()
                         Me.Close()
+                        'takes you to the staff form if they are staff
                     ElseIf staffID > 0 Then
                         StaffForm.Show()
                         Me.Close()
+                        'takes you to the admin form if they are an admin
                     ElseIf adminID > 0 Then
                         AdminForm.Show()
                         Me.Close()
@@ -48,7 +51,6 @@ Public Class UserLoginForm
 
                 End Using
             End Using
-            End Using
+        End Using
     End Sub
-
 End Class

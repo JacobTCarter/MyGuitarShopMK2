@@ -57,10 +57,10 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=JACOB;Initial Catalog=MyGuitarShop;Integrated Security=True")>  _
-        Public ReadOnly Property MyGuitarShopConnectionString() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=Jacob;Initial Catalog=Database_Final;Integrated Security=True")>  _
+        Public ReadOnly Property Database_FinalConnectionString() As String
             Get
-                Return CType(Me("MyGuitarShopConnectionString"),String)
+                Return CType(Me("Database_FinalConnectionString"),String)
             End Get
         End Property
     End Class
