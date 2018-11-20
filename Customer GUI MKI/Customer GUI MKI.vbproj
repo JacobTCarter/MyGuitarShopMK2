@@ -203,18 +203,6 @@
     <Compile Include="RewardMembersForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RewardSpecForm.Designer.vb">
-      <DependentUpon>RewardSpecForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="RewardSpecForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ServicesForm.Designer.vb">
-      <DependentUpon>ServicesForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="ServicesForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Settings.vb" />
     <Compile Include="StaffForm.Designer.vb">
       <DependentUpon>StaffForm.vb</DependentUpon>
@@ -265,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RewardMembersForm.resx">
       <DependentUpon>RewardMembersForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffForm.resx">
+      <DependentUpon>StaffForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserLoginForm.resx">
       <DependentUpon>UserLoginForm.vb</DependentUpon>

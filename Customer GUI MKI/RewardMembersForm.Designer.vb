@@ -37,7 +37,7 @@ Partial Class RewardMembersForm
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(59, 37)
+        Me.Label1.Location = New System.Drawing.Point(62, 85)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(63, 13)
         Me.Label1.TabIndex = 0

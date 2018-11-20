@@ -9,7 +9,6 @@ Public Class RewardMembersForm
 
         Dim conSQL As New SqlConnection(SQLcONN)
 
-
         conSQL.Open()
 
             Dim sql As String = "SELECT * FROM Rewards_Specification;"
