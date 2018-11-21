@@ -124,5 +124,13 @@ Public Class CustomerForm
     Private Sub AddressGuiButton_Click(sender As Object, e As EventArgs) Handles AddressGuiButton.Click
         AddressForm.Show()
     End Sub
+
+    Private Sub btnOrder_Click(sender As Object, e As EventArgs) Handles btnOrder.Click
+        OrdersForm.Show()
+    End Sub
+
+    Private Sub btnTemp_Click(sender As Object, e As EventArgs) Handles btnTemp.Click
+        OrderItemsForm.Show()
+    End Sub
 End Class
 

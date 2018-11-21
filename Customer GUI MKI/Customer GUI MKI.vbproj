@@ -163,8 +163,6 @@
     <Compile Include="ServicesForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SqlDatabaseSetup.vb" />
-    <Compile Include="SqlServerUnitTest1.vb" />
     <Compile Include="StaffForm.Designer.vb">
       <DependentUpon>StaffForm.vb</DependentUpon>
     </Compile>
@@ -190,6 +188,12 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderItemsForm.resx">
+      <DependentUpon>OrderItemsForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrdersForm.resx">
+      <DependentUpon>OrdersForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
