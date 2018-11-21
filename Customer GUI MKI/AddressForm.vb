@@ -2,10 +2,11 @@
 
 Public Class AddressForm
     'OVERALL CONNECTION
-    Dim connection As New SqlConnection("Server= DESKTOP-IGRIGM7; Database = Database_Final; Integrated Security = true")
+    Dim connection As New SqlConnection(SQLcONN)
 
     'SELECT
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles SubmitButton.Click
+
 
         Dim command As New SqlCommand("SET IDENTITY_INSERT Addresses on;insert into Addresses(AddressID, CustomerID, Line1, Line2, City, State, ZipCode, PhoneNumber) values(@AddressID,@CustomerID,@Line1,@Line2,@City,@State,@ZipCode,@PhoneNumber)", connection)
 

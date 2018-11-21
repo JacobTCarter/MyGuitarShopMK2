@@ -4,7 +4,7 @@ Imports System.Net.Mime.MediaTypeNames
 
 Public Class CustomerForm
     'This opens the connection to the database. If you use it change the server name to your server name
-    Dim connection As New SqlConnection("Server= DESKTOP-IGRIGM7; Database = Database_Final; Integrated Security = true")
+    Dim connection As New SqlConnection("Server = laptop-s17tou1u\hiyasql; Database = Database_Final; Integrated Security = true")
 
     'SUBMIT
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles SubmitButton.Click
@@ -62,7 +62,7 @@ Public Class CustomerForm
     End Sub
 
     'GET
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles GetButton.Click
+    Private Sub GetButton_Click(sender As Object, e As EventArgs) Handles GetButton.Click
 
         connection.Open()
 
@@ -123,6 +123,11 @@ Public Class CustomerForm
 
     Private Sub AddressGuiButton_Click(sender As Object, e As EventArgs) Handles AddressGuiButton.Click
         AddressForm.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub CustomerForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 
     Private Sub btnOrder_Click(sender As Object, e As EventArgs) Handles btnOrder.Click
