@@ -23,7 +23,6 @@ Partial Class StaffForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.heystaff = New System.Windows.Forms.Label()
         Me.serviceid = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ServiceName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fname1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -31,6 +30,7 @@ Partial Class StaffForm
         Me.listprice = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.orderid2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Quant = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.heystaff = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -44,16 +44,6 @@ Partial Class StaffForm
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.Size = New System.Drawing.Size(490, 239)
         Me.DataGridView2.TabIndex = 0
-        '
-        'heystaff
-        '
-        Me.heystaff.AutoSize = True
-        Me.heystaff.Font = New System.Drawing.Font("Microsoft JhengHei", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.heystaff.Location = New System.Drawing.Point(44, 26)
-        Me.heystaff.Name = "heystaff"
-        Me.heystaff.Size = New System.Drawing.Size(137, 47)
-        Me.heystaff.TabIndex = 1
-        Me.heystaff.Text = "Label1"
         '
         'serviceid
         '
@@ -103,6 +93,16 @@ Partial Class StaffForm
         Me.Quant.HeaderText = "Quantity"
         Me.Quant.Name = "Quant"
         Me.Quant.Width = 71
+        '
+        'heystaff
+        '
+        Me.heystaff.AutoSize = True
+        Me.heystaff.Font = New System.Drawing.Font("Microsoft JhengHei", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.heystaff.Location = New System.Drawing.Point(44, 26)
+        Me.heystaff.Name = "heystaff"
+        Me.heystaff.Size = New System.Drawing.Size(137, 47)
+        Me.heystaff.TabIndex = 1
+        Me.heystaff.Text = "Label1"
         '
         'Label1
         '

@@ -122,11 +122,6 @@
       <DependentUpon>Customers.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Database_FinalDataSet.Designer.vb">
-      <DependentUpon>Database_FinalDataSet.xsd</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
     <Compile Include="EmployeeListForm.Designer.vb">
       <DependentUpon>EmployeeListForm.vb</DependentUpon>
     </Compile>
@@ -203,12 +198,6 @@
     <Compile Include="RewardMembersForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RewardSpecForm.Designer.vb">
-      <DependentUpon>RewardSpecForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="RewardSpecForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="ServicesForm.Designer.vb">
       <DependentUpon>ServicesForm.vb</DependentUpon>
     </Compile>
@@ -280,17 +269,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Database_FinalDataSet.xsc">
-      <DependentUpon>Database_FinalDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Database_FinalDataSet.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Database_FinalDataSet.Designer.vb</LastGenOutput>
-    </None>
-    <None Include="Database_FinalDataSet.xss">
-      <DependentUpon>Database_FinalDataSet.xsd</DependentUpon>
-    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

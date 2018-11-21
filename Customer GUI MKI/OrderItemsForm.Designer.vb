@@ -25,12 +25,12 @@ Partial Class OrderItemsForm
         Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgOrders = New System.Windows.Forms.DataGridView()
-        Me.MyGuitarShopDataSet = New Customer_GUI_MKI.MyGuitarShopDataSet()
+        'Me.MyGuitarShopDataSet = New Customer_GUI_MKI.MyGuitarShopDataSet()
         Me.MyGuitarShopDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.dgServices = New System.Windows.Forms.DataGridView()
         Me.Label2 = New System.Windows.Forms.Label()
         CType(Me.dgOrders, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MyGuitarShopDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        'CType(Me.MyGuitarShopDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MyGuitarShopDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgServices, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -58,12 +58,12 @@ Partial Class OrderItemsForm
         '
         'MyGuitarShopDataSet
         '
-        Me.MyGuitarShopDataSet.DataSetName = "MyGuitarShopDataSet"
-        Me.MyGuitarShopDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        'Me.MyGuitarShopDataSet.DataSetName = "MyGuitarShopDataSet"
+        'Me.MyGuitarShopDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'MyGuitarShopDataSetBindingSource
         '
-        Me.MyGuitarShopDataSetBindingSource.DataSource = Me.MyGuitarShopDataSet
+        'Me.MyGuitarShopDataSetBindingSource.DataSource = Me.MyGuitarShopDataSet
         Me.MyGuitarShopDataSetBindingSource.Position = 0
         '
         'dgServices
@@ -96,7 +96,7 @@ Partial Class OrderItemsForm
         Me.Name = "OrderItemsForm"
         Me.Text = "OrderItemsForm"
         CType(Me.dgOrders, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MyGuitarShopDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        'CType(Me.MyGuitarShopDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MyGuitarShopDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgServices, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -106,7 +106,7 @@ Partial Class OrderItemsForm
 
     Friend WithEvents Label1 As Label
     Friend WithEvents dgOrders As DataGridView
-    Friend WithEvents MyGuitarShopDataSet As MyGuitarShopDataSet
+    'Friend WithEvents MyGuitarShopDataSet As MyGuitarShopDataSet
     Friend WithEvents MyGuitarShopDataSetBindingSource As BindingSource
     Friend WithEvents dgServices As DataGridView
     Friend WithEvents Label2 As Label

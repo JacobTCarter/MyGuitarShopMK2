@@ -4,5 +4,5 @@
     Public adminID
     Public FirstName
 
-    Public SQLcONN = "Server= LAPTOP-S17TOU1U\HIYASQL; Database = Database_Final; Integrated Security = true"
+    Public SQLcONN = "Server= DESKTOP-6IUFVL0\SQLEXPRESS; Database = Database_Final; Integrated Security = true"
 End Module
