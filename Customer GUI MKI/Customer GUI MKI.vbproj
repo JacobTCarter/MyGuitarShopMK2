@@ -2,6 +2,21 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <SSDTUnitTestPath Condition="'$(SSDTUnitTestPath)' == ''">$(VsInstallRoot)\Common7\IDE\Extensions\Microsoft\SQLDB</SSDTUnitTestPath>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup>
     <SSDTPath Condition="'$(SSDTPath)' == ''">$(VsInstallRoot)\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\130</SSDTPath>
@@ -94,10 +109,10 @@
     <Compile Include="AdminForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmployeeForm.Designer.vb">
-      <DependentUpon>EmployeeForm.vb</DependentUpon>
+    <Compile Include="CustomerListForm.Designer.vb">
+      <DependentUpon>CustomerListForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeForm.vb">
+    <Compile Include="CustomerListForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Customers.vb">
@@ -107,6 +122,18 @@
       <DependentUpon>Customers.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Database_FinalDataSet.Designer.vb">
+      <DependentUpon>Database_FinalDataSet.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="EmployeeListForm.Designer.vb">
+      <DependentUpon>EmployeeListForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeListForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalVariables.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -122,10 +149,29 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="MyGuitarShopDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MyGuitarShopDataSet.xsd</DependentUpon>
+    <Compile Include="NewAdminForm.Designer.vb">
+      <DependentUpon>NewAdminForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewAdminForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewEmployeeForm.Designer.vb">
+      <DependentUpon>NewEmployeeForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewEmployeeForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewStaffForm.Designer.vb">
+      <DependentUpon>NewStaffForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewStaffForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewUserForm.Designer.vb">
+      <DependentUpon>NewUserForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewUserForm.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="OrderItemsForm.Designer.vb">
       <DependentUpon>OrderItemsForm.vb</DependentUpon>
@@ -137,6 +183,12 @@
       <DependentUpon>OrdersForm.vb</DependentUpon>
     </Compile>
     <Compile Include="OrdersForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductListForm.Designer.vb">
+      <DependentUpon>ProductListForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ProductListForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ProductsForm.Designer.vb">
@@ -163,16 +215,17 @@
     <Compile Include="ServicesForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Settings.vb" />
     <Compile Include="StaffForm.Designer.vb">
       <DependentUpon>StaffForm.vb</DependentUpon>
     </Compile>
     <Compile Include="StaffForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserLogin.Designer.vb">
-      <DependentUpon>UserLogin.vb</DependentUpon>
+    <Compile Include="UserLoginForm.Designer.vb">
+      <DependentUpon>UserLoginForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserLogin.vb">
+    <Compile Include="UserLoginForm.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -180,8 +233,17 @@
     <EmbeddedResource Include="AddressForm.resx">
       <DependentUpon>AddressForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminForm.resx">
+      <DependentUpon>AdminForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerListForm.resx">
+      <DependentUpon>CustomerListForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customers.resx">
       <DependentUpon>Customers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeListForm.resx">
+      <DependentUpon>EmployeeListForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -195,8 +257,40 @@
     <EmbeddedResource Include="OrdersForm.resx">
       <DependentUpon>OrdersForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewAdminForm.resx">
+      <DependentUpon>NewAdminForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEmployeeForm.resx">
+      <DependentUpon>NewEmployeeForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewStaffForm.resx">
+      <DependentUpon>NewStaffForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewUserForm.resx">
+      <DependentUpon>NewUserForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RewardMembersForm.resx">
+      <DependentUpon>RewardMembersForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffForm.resx">
+      <DependentUpon>StaffForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserLoginForm.resx">
+      <DependentUpon>UserLoginForm.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Database_FinalDataSet.xsc">
+      <DependentUpon>Database_FinalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Database_FinalDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database_FinalDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Database_FinalDataSet.xss">
+      <DependentUpon>Database_FinalDataSet.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -207,19 +301,19 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <None Include="MyGuitarShopDataSet.xsc">
-      <DependentUpon>MyGuitarShopDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="MyGuitarShopDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MyGuitarShopDataSet.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="MyGuitarShopDataSet.xss">
-      <DependentUpon>MyGuitarShopDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <ItemGroup Condition="$(VisualStudioVersion) == '15.0'">
     <Reference Include="Microsoft.Data.Tools.Schema.Sql, Version=13.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>$(SSDTPath)\Microsoft.Data.Tools.Schema.Sql.dll</HintPath>
