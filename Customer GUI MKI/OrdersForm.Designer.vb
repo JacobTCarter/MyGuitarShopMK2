@@ -128,14 +128,14 @@ Partial Class OrdersForm
         '
         'tbODate
         '
-        Me.tbODate.Location = New System.Drawing.Point(9, 346)
+        Me.tbODate.Location = New System.Drawing.Point(61, 390)
         Me.tbODate.Name = "tbODate"
         Me.tbODate.Size = New System.Drawing.Size(141, 20)
         Me.tbODate.TabIndex = 9
         '
         'tbSDate
         '
-        Me.tbSDate.Location = New System.Drawing.Point(9, 320)
+        Me.tbSDate.Location = New System.Drawing.Point(61, 418)
         Me.tbSDate.Name = "tbSDate"
         Me.tbSDate.Size = New System.Drawing.Size(141, 20)
         Me.tbSDate.TabIndex = 10

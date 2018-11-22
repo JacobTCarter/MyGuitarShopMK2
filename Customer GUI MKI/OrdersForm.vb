@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class OrdersForm
-    Dim connection As New SqlConnection("Server= DESKTOP-6IUFVL0\SQLEXPRESS; Database = Database_Final; Integrated Security = true")
+    Dim connection As New SqlConnection(SQLcONN)
 
     Private Sub btnGet_Click(sender As Object, e As EventArgs) Handles btnGet.Click
         connection.Open()
@@ -36,11 +36,17 @@ Public Class OrdersForm
         insert into ORDERS(OrderID, CustomerID, OrderDate, ShipDate, ShipAddressID, CardType, CardNumber, CardExpires, BillingAddressID) 
         values(@oid,@cid,@od,@sd,@said,@ct,@cn,@ce,@baid)", connection)
 
-        command.Parameters.Add("@oid", SqlDbType.Int).Value = 13
-        command.Parameters.Add("@cid", SqlDbType.Int).Value = 1 'for test use
-        command.Parameters.Add("@od", SqlDbType.DateTime).Value = tbODate.Text
-        command.Parameters.Add("@sd", SqlDbType.DateTime).Value = tbODate.Text
-        command.Parameters.Add("@said", SqlDbType.Int).Value = 1 'testing
+        Dim rowNum As New SqlCommand("select count(OrderID) as num from ORDERS", connection)
+        Dim rowA As New SqlDataAdapter(rowNum)
+        Dim tableNum As New DataTable()
+        rowA.Fill(tableNum)
+        Dim orNum As Int16 = Convert.ToInt16(tableNum.Rows(0)(0)) + 1
+
+        command.Parameters.Add("@oid", SqlDbType.Int).Value = orNum
+        command.Parameters.Add("@cid", SqlDbType.Int).Value = custID
+        command.Parameters.Add("@od", SqlDbType.DateTime).Value = tbODate.Text 'found out how to get current date
+        command.Parameters.Add("@sd", SqlDbType.DateTime).Value = vbNull 'might not work
+        command.Parameters.Add("@said", SqlDbType.Int).Value = 1 'testing need to write a something to get these
         command.Parameters.Add("@ct", SqlDbType.VarChar).Value = tbCType.Text
         command.Parameters.Add("@cn", SqlDbType.Char).Value = tbCNum.Text
         command.Parameters.Add("@ce", SqlDbType.Char).Value = tbCExp.Text
@@ -58,20 +64,34 @@ Public Class OrdersForm
 
         End If
 
-        Dim command2 As New SqlCommand("select ProductName, Quantity, ItemPrice, DiscountAmount, (ItemPrice - DiscountAmount) as Total from ORDER_ITEMS oi, PRODUCTS p where oi.ProductID = p.ProductID and OrderID = @OrderID", connection)
-        command2.Parameters.Add(New SqlParameter("@OrderID", SqlDbType.Int)).Value = 1
+        'prints a receipt still a work in progress only prints 1 receipt
+        Dim command2 As New SqlCommand("select ProductName, Quantity, ItemPrice, DiscountAmount, (ItemPrice - DiscountAmount) as Total from ORDER_ITEMS oi, PRODUCTS p where oi.ProductID = p.ProductID and OrderID = 3", connection)
+        command2.Parameters.Add(New SqlParameter("@OrderID", SqlDbType.Int)).Value = orNum
         Dim adapter As New SqlDataAdapter(command2)
         Dim table As New DataTable()
         adapter.Fill(table)
 
-        txtRe.AppendText("Order Number: " + 13.ToString())
+        Dim disTotal As Double = 0
+        Dim grandTotal As Double = 0
+
+        txtRe.AppendText("Order Number: " + orNum.ToString())
+        txtRe.AppendText(table.Rows.Count)
         txtRe.AppendText(Environment.NewLine)
         txtRe.AppendText(Environment.NewLine)
-        txtRe.AppendText("Items Ordered: " + table.Rows(0)(1).ToString() + " " + table.Rows(0)(0).ToString() + "  $" + Math.Round(table.Rows(0)(2), 2).ToString())
+        txtRe.AppendText("Items Ordered: ")
+        For i As Int16 = 0 To table.Rows.Count - 1
+
+            txtRe.AppendText(table.Rows(i)(1).ToString() + " " + table.Rows(i)(0).ToString() + "  $" + Math.Round(table.Rows(i)(2), 2).ToString())
+            txtRe.AppendText(Environment.NewLine)
+            txtRe.AppendText("                        ")
+            disTotal += table.Rows(i)(3)
+            grandTotal += table.Rows(i)(4)
+
+        Next
         txtRe.AppendText(Environment.NewLine)
-        txtRe.AppendText("Total Discount: $" + Math.Round(table.Rows(0)(3), 2).ToString())
+        txtRe.AppendText("Total Discount: $" + Math.Round(disTotal, 2).ToString())
         txtRe.AppendText(Environment.NewLine)
-        txtRe.AppendText("Total Amount: $" + Math.Round(table.Rows(0)(4), 2).ToString())
+        txtRe.AppendText("Total Amount: $" + Math.Round(grandTotal, 2).ToString())
         connection.Close()
 
         connection.Close()
