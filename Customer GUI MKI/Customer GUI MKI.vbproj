@@ -134,11 +134,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="MyGuitarShopDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MyGuitarShopDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="NewUserForm.Designer.vb">
       <DependentUpon>NewUserForm.vb</DependentUpon>
     </Compile>
@@ -249,17 +244,6 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <None Include="MyGuitarShopDataSet.xsc">
-      <DependentUpon>MyGuitarShopDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="MyGuitarShopDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MyGuitarShopDataSet.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="MyGuitarShopDataSet.xss">
-      <DependentUpon>MyGuitarShopDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup Condition="$(VisualStudioVersion) == '15.0'">

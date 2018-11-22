@@ -79,13 +79,25 @@ Public Class AddCustomerWithAddress
     End Function
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
-        Label5.Show()
-        BillingLine1_TB.Show()
-        BillingLine2_TB.Show()
-        BillingCity_TB.Show()
-        BillingState_TB.Show()
-        BillingZip_TB.Show()
-        BillingPhone_TB.Show()
+        If (CheckBox1.Checked) Then
+            Label5.Show()
+            BillingLine1_TB.Show()
+            BillingLine2_TB.Show()
+            BillingCity_TB.Show()
+            BillingState_TB.Show()
+            BillingZip_TB.Show()
+            BillingPhone_TB.Show()
+        End If
+
+        If (CheckBox1.Checked = False) Then
+            Label5.Hide()
+            BillingLine1_TB.Hide()
+            BillingLine2_TB.Hide()
+            BillingCity_TB.Hide()
+            BillingState_TB.Hide()
+            BillingZip_TB.Hide()
+            BillingPhone_TB.Hide()
+        End If
     End Sub
 
     Private Sub AddCustomerWithAddress_Load(sender As Object, e As EventArgs) Handles MyBase.Load
