@@ -15,6 +15,7 @@ Public Class AddCustomerWithAddress
 
         connection.Open()
 
+
         Dim findSID As Integer = findNextShippingID.ExecuteScalar
         Dim findCID As Integer = findNextCustomerID.ExecuteScalar
         Dim findBID As Integer = findNextBillingID.ExecuteScalar
