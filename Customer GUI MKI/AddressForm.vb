@@ -4,114 +4,50 @@ Public Class AddressForm
     'OVERALL CONNECTION
     Dim connection As New SqlConnection("Server= DESKTOP-IGRIGM7; Database = Database_Final; Integrated Security = true")
 
-    'SELECT
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles SubmitButton.Click
-
-        Dim command As New SqlCommand("SET IDENTITY_INSERT Addresses on;insert into Addresses(AddressID, CustomerID, Line1, Line2, City, State, ZipCode, PhoneNumber) values(@AddressID,@CustomerID,@Line1,@Line2,@City,@State,@ZipCode,@PhoneNumber)", connection)
-
-        command.Parameters.Add("@AddressID", SqlDbType.Int).Value = AddressID_TB.Text
-        command.Parameters.Add("@CustomerID", SqlDbType.Int).Value = CustomerID_TB.Text
-        command.Parameters.Add("@Line1", SqlDbType.VarChar).Value = AddressOne_TB.Text
-        command.Parameters.Add("@Line2", SqlDbType.VarChar).Value = AddressTwo_TB.Text
-        command.Parameters.Add("@City", SqlDbType.VarChar).Value = City_TB.Text
-        command.Parameters.Add("@State", SqlDbType.VarChar).Value = State_TB.Text.ToUpper
-        command.Parameters.Add("@ZipCode", SqlDbType.Int).Value = ZipCode_TB.Text
-        command.Parameters.Add("@PhoneNumber", SqlDbType.VarChar).Value = PhoneNumber_TB.Text
+    'UPDATE
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles UpdateButton.Click
+        Dim update As New SqlCommand("UPDATE ADDRESSES SET AddressID = @aid, CustomerID = @cid, Line1 = @line1, Line2 = @line2, City = @city, State = @state, ZipCode = @zip, Phone = @phone WHERE CustomerID = @cid AND AddressID = @aid", connection)
 
         connection.Open()
 
-        If command.ExecuteNonQuery() = 1 Then
 
-            MessageBox.Show("New Customer Added")
-
-        Else
-
-            MessageBox.Show("Customer Not Added")
-
-        End If
+        update.Parameters.Add("@line1", SqlDbType.VarChar).Value = ShippingLine1_TB.Text
+        update.Parameters.Add("@line2", SqlDbType.VarChar).Value = ShippingLine2_TB.Text
+        update.Parameters.Add("@city", SqlDbType.VarChar).Value = ShippingCity_TB.Text
+        update.Parameters.Add("@state", SqlDbType.VarChar).Value = ShippingState_TB.Text
+        update.Parameters.Add("@zip", SqlDbType.Int).Value = ShippingZip_TB.Text
+        update.Parameters.Add("@phone", SqlDbType.VarChar).Value = ShippingPhone_TB.Text
 
         connection.Close()
-    End Sub
 
+        update.ExecuteNonQuery()
+
+        If (CheckBox1.Checked) Then
+            Dim update2 As New SqlCommand("UPDATE ADDRESSES SET AddressID = @aid, CustomerID = @cid, Line1 = @line1, Line2 = @line2, City = @city, State = @state, ZipCode = @zip, Phone = @phone WHERE CustomerID = @cid AND AddressID = @aid", connection)
+
+            connection.Open()
+
+            'update2.Parameters.Add("@aid", SqlDbType.Int).Value = findAID
+            'update2.Parameters.Add("@cid", SqlDbType.Int).Value = findCID
+            update2.Parameters.Add("@line1", SqlDbType.VarChar).Value = BillingLine1_TB.Text
+            update2.Parameters.Add("@line2", SqlDbType.VarChar).Value = BillingLine2_TB.Text
+            update2.Parameters.Add("@city", SqlDbType.VarChar).Value = BillingCity_TB.Text
+            update2.Parameters.Add("@state", SqlDbType.VarChar).Value = BillingState_TB.Text.ToUpper
+            update2.Parameters.Add("@zip", SqlDbType.Int).Value = BillingZip_TB.Text
+            update2.Parameters.Add("@phone", SqlDbType.VarChar).Value = BillingPhone_TB.Text
+
+            connection.Close()
+            update2.ExecuteNonQuery()
+        End If
+    End Sub
 
     'EXIT
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles UpdateButton.Click
+    Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
         Me.Close()
     End Sub
 
-    'DELETE
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles DeleteButton.Click
-
-        Dim command As New SqlCommand("DELETE from ADDRESSES where AddressID = @AddressID", connection)
-        command.Parameters.Add(New SqlParameter("@AddressID", SqlDbType.Int)).Value = AddressID_TB.Text
-
-        connection.Open()
-
-        If command.ExecuteNonQuery() = 1 Then
-            MessageBox.Show("Address Deleted")
-            AddressID_TB.Clear()
-            CustomerID_TB.Clear()
-            AddressOne_TB.Clear()
-            AddressTwo_TB.Clear()
-            City_TB.Clear()
-            State_TB.Clear()
-            ZipCode_TB.Clear()
-            PhoneNumber_TB.Clear()
-        Else
-            MessageBox.Show("Address Not Deleted")
-        End If
-
-        connection.Close()
-    End Sub
-
-    'GET W/ ADDRESS ID
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles GetAddressIDButton.Click
-
-        Dim command As New SqlCommand("SELECT * FROM ADDRESSES WHERE AddressID = @AddressID", connection)
-        command.Parameters.Add(New SqlParameter("@AddressID", SqlDbType.Int)).Value = AddressID_TB.Text
-        Dim adapter As New SqlDataAdapter(command)
-        Dim table As New DataTable()
-        adapter.Fill(table)
-
-        connection.Open()
-
-        CustomerID_TB.Text = table.Rows(0)(1).ToString()
-        AddressOne_TB.Text = table.Rows(0)(2).ToString()
-        AddressTwo_TB.Text = table.Rows(0)(3).ToString()
-        City_TB.Text = table.Rows(0)(4).ToString()
-        State_TB.Text = table.Rows(0)(5).ToString()
-        ZipCode_TB.Text = table.Rows(0)(6).ToString()
-        PhoneNumber_TB.Text = table.Rows(0)(7).ToString()
-
-        connection.Close()
-    End Sub
 
 
-    'GET W/ CUSTOMER ID
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles GetCustomerIDButton.Click
-        connection.Open()
-
-        Dim command As New SqlCommand("SELECT * FROM ADDRESSES WHERE CustomerID = @CustomerID", connection)
-        command.Parameters.Add(New SqlParameter("@CustomerID", SqlDbType.Int)).Value = CustomerID_TB.Text
-        Dim adapter As New SqlDataAdapter(command)
-        Dim table As New DataTable()
-        adapter.Fill(table)
-
-        AddressID_TB.Text = table.Rows(0)(0).ToString()
-        AddressOne_TB.Text = table.Rows(0)(2).ToString()
-        AddressTwo_TB.Text = table.Rows(0)(3).ToString()
-        City_TB.Text = table.Rows(0)(4).ToString()
-        State_TB.Text = table.Rows(0)(5).ToString()
-        ZipCode_TB.Text = table.Rows(0)(6).ToString()
-        PhoneNumber_TB.Text = table.Rows(0)(7).ToString()
-
-        connection.Close()
-    End Sub
-
-    'DELETE
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
-        Me.Close()
-    End Sub
 
 End Class
 
